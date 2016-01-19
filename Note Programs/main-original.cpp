@@ -12,11 +12,10 @@
  */
 
 #include <cstdlib>
+#include "emp.h"
 #include <iostream>
 
-#include "emp.h"
-
-//using namespace std; //This is bad practice, it's very unnecessary because std is a very big namespace
+using namespace std;
 
 /*
  * 

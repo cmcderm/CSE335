@@ -17,28 +17,15 @@
 #include <string>
 #include <iostream>
 #include <vector>
-
-//using namespace std; instead of using the whole namespace, it's better practice to declar each member you want to use individually
-using std::string; //not a big deal for this class, but you wanna break the habit before big companies look at your code
-using std::cout;
-using std::endl;
-using std::vector;
+using namespace std;
 
 class Employee{
-protected: //Variables that we want to inherit should be protected, not private
+private:
     string firstName, lastName;
     short dep;
 public:
-    Employee(){
-		firstName = "foo";
-		lastName = "bar";
-		dep = 42;
-	}
-    Employee(string fn,string ln,short d){
-		firstName = fn;
-		lastName = ln;
-		dep = d;
-	}
+    Employee();
+    Employee(string,string,short);
     void print() const{
         cout<<"Name: "<<firstName <<" "<<lastName<<endl
                 <<"Dept: "<<dep;
@@ -47,18 +34,13 @@ public:
 
 
 class Manager :public Employee{
-protected:
-    vector<Employee*> group;
+private:
+    //vector<Employee*> group;
     short level;
     
 public:
     //Manager();
-    Manager(string fn, string ln, short d, short l){
-		firstName = fn;
-		lastName = ln;
-		dep = d;
-		level = l;
-	}
+    Manager(string, string, short, short);
     void print() const{
         Employee::print();
         cout<<"Level: "<<level;
