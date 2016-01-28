@@ -29,9 +29,7 @@ protected:
 public:
         CEmployee():firstName("SubA_First"),lastName("SubA_Second"),hireYear(2015),salary(20){}
         
-        CEmployee(string fn, string ln,tm hy,int s):firstName(fn),lastName(ln),salary(s){
-            hireYear = hy.tm_year;
-        }
+        CEmployee(string fn, string ln,tm hy,int s):firstName(fn),lastName(ln), hireYear(hy.tm_year),salary(s){}
         
         virtual ~CEmployee(){}
 
