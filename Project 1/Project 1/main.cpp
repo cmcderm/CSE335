@@ -1,6 +1,6 @@
 /* 
  * File:   main.cpp
- * Author: Connor
+ * Author: Connor McDermott
  *
  * Created on January 28, 2016, 2:17 AM
  */
@@ -8,6 +8,8 @@
 #include <cstdlib>
 #include <iostream>
 #include <string>
+
+#include "Employee.h"
 
 using std::cout;
 using std::endl;
@@ -94,7 +96,11 @@ int main(int argc, char** argv) {
 
 
 int main(int argc, char* argv[]) {
-    cout << "hello" << endl;
+    Employee emp("Barbra", "Streisand", 2015, 42);
+    Employee defaultEmp;
+    
+    defaultEmp.print();
+    emp.print();
     return 0;
 }
 
