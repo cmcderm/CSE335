@@ -27,12 +27,12 @@ public:
         Employee():firstName("SubA_First"),lastName("SubA_Second"),hireYear(2015),salary(20){}
         Employee(string fn, string ln, int hy, int s):firstName(fn),lastName(ln),hireYear(hy),salary(s){}
 
-        string getFirstName(){return firstName;}
-        string getLastName(){return lastName;}
-        int getHireYear(){return hireYear;}
-        int getSalary(){return salary;}
+        string getFirstName()const{return firstName;}
+        string getLastName()const{return lastName;}
+        int getHireYear()const{return hireYear;}
+        int getSalary()const{return salary;}
         
-        void print(){
+        virtual void print()const{
             cout << firstName << " " << lastName << "\tSalary: " << salary << "\tHiring Year: " << hireYear << endl;
         }
 };
