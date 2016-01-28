@@ -1,47 +1,8 @@
-/* 
- * File:   main.cpp
- * Author: Connor McDermott
- *
- * Created on January 28, 2016, 2:17 AM
- */
-
-#include <cstdlib>
-#include <iostream>
-#include <string>
-
-#include "Employee.h"
-
-using std::cout;
-using std::endl;
-
-/*
- * 
- */
-/*
- 
- /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/*
- * File:   main.cpp
- * Author: MacBookPro
- *
- * Created on January 26, 2016, 12:25 PM
- */
-
 #include <cstdlib>
 #include <iostream>
 #include "Employee.h"
 #include "Manager.h"
 using namespace std;
-
-/*
- *
- */
-
 
 /*
 int main(int argc, char** argv) {
@@ -96,11 +57,14 @@ int main(int argc, char** argv) {
 
 
 int main(int argc, char* argv[]) {
-    Employee emp("Barbra", "Streisand", 2015, 42);
-    Employee defaultEmp;
+    //check default constructors
+    tm hiringYear;
+    hiringYear.tm_year=2012;
+    vector<CEmployee*> emps;
+    CManager mang("SubA_First","SubA_Second",20,hiringYear,"CSE",emps);
+    mang.DisplayEmployee();
+    cout<<"Default Constructor Check\n\n";
     
-    defaultEmp.print();
-    emp.print();
     return 0;
 }
 
