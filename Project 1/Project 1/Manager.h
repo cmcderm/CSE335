@@ -39,7 +39,15 @@ public:
     
     
     virtual void DisplayEmployee()const{
-        cout << "This is a manager" << endl;
+        cout << this->firstName << " is a manager who manages: " << endl;
+        for(int i=0; i<group.size(); i++){
+            cout<< group[i]->getFirstName()<<" "<<
+                    group[i]->getLastName()<<"; ";
+        }
+        if (group.size() ==0){
+            cout<< "no one";
+        }
+        cout<<endl;
     }
 };
 

@@ -25,7 +25,9 @@ public:
         CDatabase();
 
         void AddRecord();
-        void DisplayRecords();
+        void DisplayRecords(){
+            
+        };
 };
 
 #endif /* CDATABASE_H */
