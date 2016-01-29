@@ -57,16 +57,5 @@ public:
         }
 };
 
-class CDatabase {
-
-protected:
-        vector<CEmployee*> database;
-
-public:
-        CDatabase();
-
-        void AddRecord();
-        void DisplayRecords();
-};
 
 #endif
