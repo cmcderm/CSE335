@@ -44,7 +44,7 @@ public:
        // lastName(ln), salary(s), hireYear(hy.tm_year){}
      
         
-        virtual ~CEmployee(){}
+        virtual ~CEmployee(){};
 
         string getFirstName()const{return firstName;}
         string getLastName()const{return lastName;}

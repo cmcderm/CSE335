@@ -35,7 +35,7 @@ public:
         dept = "CSE";
     }
     
-    virtual ~CManager();
+    virtual ~CManager(){};
     virtual void DisplayEmployee()const{
         cout << "This is a manager" << endl;
     }
