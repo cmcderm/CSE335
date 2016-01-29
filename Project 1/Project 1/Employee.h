@@ -23,23 +23,37 @@ class CEmployee {
 protected:
         string firstName;
         string lastName;
-        int hireYear;
+        tm hireYear;
         int salary;
 
 public:
-        CEmployee():firstName("SubA_First"),lastName("SubA_Second"),hireYear(2015),salary(20){}
+     CEmployee() =default;
+        /*CEmployee():firstName("SubA_First"),lastName("SubA_Second"),
+          //      hireYear(2015),salary(20){}*/
+        CEmployee(string fn, 
+            string ln, int muny, 
+            tm hy){
+        firstName =fn;
+        lastName =ln;
+        salary = muny;
+        hireYear.tm_year = hy.tm_year;
+    };
+   
         
-        CEmployee(string fn, string ln,tm hy,int s):firstName(fn),lastName(ln), hireYear(hy.tm_year),salary(s){}
+       // CEmployee(string fn, string ln, int s, tm hy):firstName(fn),
+       // lastName(ln), salary(s), hireYear(hy.tm_year){}
+     
         
         virtual ~CEmployee(){}
 
         string getFirstName()const{return firstName;}
         string getLastName()const{return lastName;}
-        int getHireYear()const{return hireYear;}
+        tm getHireYear()const{return hireYear;}
         int getSalary()const{return salary;}
         
         virtual void DisplayEmployee()const{
-            cout << firstName << " " << lastName << "\tSalary: " << salary << "\tHiring Year: " << hireYear << endl;
+            cout << firstName << " " << lastName << "\tSalary: " << salary 
+                    << "\tHiring Year: " << hireYear.tm_year << endl;
         }
 };
 

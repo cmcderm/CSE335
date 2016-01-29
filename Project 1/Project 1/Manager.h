@@ -3,10 +3,11 @@
 
 #include <cstdlib>
 #include <vector>
-
+#include <iostream>
 #include "Employee.h"
 
 using std::vector;
+using namespace std;
 
 class CManager: public CEmployee {
 
@@ -15,21 +16,25 @@ protected:
     string dept;
         
 public:
-    CManager(){
-        firstName = "DefMan_first";
-        lastName = "DefMan_second";
-        hireYear = 2015;
-        salary = 42;
-        dept = "CSE";
-    }
-    CManager(string fn, string ln, tm hy, int s, string d, vector<CEmployee*> &g):CEmployee(fn, ln, hy, s){
+    
+    CManager(string fn, string ln, int s, tm hy, string d, vector<CEmployee*> &g)
+    :CEmployee(fn, ln, s, hy){
         firstName = fn;
         lastName = ln;
-        hireYear = hy.tm_year;
+        hireYear.tm_year = hy.tm_year;
         salary = s;
         dept = d;
         group = g;
     }
+    CManager(){
+        firstName = "DefMan_first";
+        lastName = "DefMan_second";
+        hireYear.tm_year = 2015;
+        salary = 42;
+        group = vector<CEmployee*>();
+        dept = "CSE";
+    }
+    
     virtual ~CManager();
     virtual void DisplayEmployee()const{
         cout << "This is a manager" << endl;
