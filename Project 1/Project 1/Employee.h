@@ -68,7 +68,7 @@ public:
     
     virtual void DisplayEmployee()const{
         cout << firstName << " " << lastName << "\tSalary: " << salary 
-                << "\tHiring Year: " << hireYear.tm_year << endl;
+                << "\t Hiring Year: " << hireYear.tm_year << endl;
     }
 };
 #endif
