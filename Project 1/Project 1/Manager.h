@@ -71,9 +71,9 @@ public:
     virtual void DisplayEmployee()const{
         cout << firstName << " " << lastName << "\tSalary: " << salary 
                 << "\tHire Year: " << hireYear.tm_year << "\t" 
-                << dept << "Subordinates: " << group.size() << endl;
+                << dept << " Subordinates: " << group.size() << endl;
         for(int i=0; i<group.size(); i++){
-            cout<< "\tSubordinate: ";
+            cout<< "\t Subordinate: ";
             group[i]->DisplayEmployee();
         }
     }
