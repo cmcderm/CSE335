@@ -2,10 +2,11 @@
 #include <iostream>
 #include "Employee.h"
 #include "Manager.h"
+#include "Database.h"
 using namespace std;
 
-/*
 int main(int argc, char** argv) {
+    cout << endl;
     //check default constructors
     tm hiringYear;
     hiringYear.tm_year=2012;
@@ -51,37 +52,3 @@ int main(int argc, char** argv) {
     
     return 0;
 }
- 
- */
-
-
-
-int main(int argc, char* argv[]) {
-    //check default constructors
-    tm hiringYear;
-    hiringYear.tm_year=2012;
-    vector<CEmployee*> emps;
-    CManager mang("SubA_First","SubA_Second",20,hiringYear,"CSE",emps);
-    mang.DisplayEmployee();
-    cout<<"Default Constructor Check\n\n";
-    
-    //check copy constructors
-    CManager mang1=mang;
-    mang1.DisplayEmployee();
-    cout<<"Copy Constructor Check\n\n";
-    
-     //check assignment operator
-    hiringYear.tm_year=2015;
-    CManager mang3("SubB_First","SubB_Second",10,hiringYear,"CSE",emps);
-    mang3.DisplayEmployee();
-    mang1=mang3;
-    mang1.DisplayEmployee();
-    cout<<"Assignment Operator Check\n\n";
-    
-    //Add subordinates
-    emps.push_back(&mang);
-    emps.push_back(&mang1);
-    
-    return 0;
-}
-

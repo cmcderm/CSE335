@@ -24,7 +24,7 @@ public:
         hireYear.tm_year = hy.tm_year;
         salary = s;
         dept = d;
-        group = g;
+        group = g; //bad practice but it's how the main is supposed to work it seems?
     }
     CManager(){
         firstName = "DefMan_first";
@@ -35,13 +35,39 @@ public:
         dept = "CSE";
     }
     
-    virtual ~CManager(){};
+    CManager(CManager &other){
+        firstName = other.firstName;
+        lastName = other.lastName;
+        salary = other.salary;
+        hireYear = other.hireYear;
+        dept = other.dept;
+        group = other.group;
+    }
+    
+    CManager& operator=(CManager &other){
+        if(this!=&other){
+            this->firstName = other.firstName;
+            this->lastName = other.lastName;
+            this->salary = other.salary;
+            this->hireYear = other.hireYear;
+            this->dept = other.dept;
+            this->group = other.group;
+        }
+        return *this;
+    }
+    
+    virtual ~CManager(){
+        for(int i = 0; i<group.size(); i++){
+            delete (group[i]);
+        }
+        group.clear();
+    }
     
     
     virtual void DisplayEmployee()const{
-        cout << this->firstName << " is a manager who manages: " << endl;
+        cout << firstName << " " << lastName << "\tSalary: " << salary << "Hire Year: " << hireYear.tm_year << "\t" << dept << "Subordinates: " << group.size() << endl;
         for(int i=0; i<group.size(); i++){
-            cout<< group[i]->getFirstName()<<" "<<
+            cout<< "\t" << group[i]->getFirstName()<<" "<<
                     group[i]->getLastName()<<"; ";
         }
         if (group.size() ==0){
