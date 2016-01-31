@@ -57,9 +57,6 @@ public:
         }
         return *this;
     }
-        
-    // CEmployee(string fn, string ln, int s, tm hy):firstName(fn),
-    // lastName(ln), salary(s), hireYear(hy.tm_year){}
 
     string getFirstName()const{return firstName;}
     void setFirstName(string fn){firstName = fn;}
