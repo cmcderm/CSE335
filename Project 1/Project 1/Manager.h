@@ -16,7 +16,14 @@ protected:
     string dept;
         
 public:
-    
+    CManager(){
+        firstName = "DefMan_first";
+        lastName = "DefMan_second";
+        hireYear.tm_year = 2015;
+        salary = 42;
+        group = vector<CEmployee*>();
+        dept = "CSE";
+    }
     CManager(string fn, string ln, int s, tm hy, string d, vector<CEmployee*> &g)
     :CEmployee(fn, ln, s, hy){
         firstName = fn;
@@ -25,14 +32,6 @@ public:
         salary = s;
         dept = d;
         group = g; //bad practice but it's how the main is supposed to work it seems?
-    }
-    CManager(){
-        firstName = "DefMan_first";
-        lastName = "DefMan_second";
-        hireYear.tm_year = 2015;
-        salary = 42;
-        group = vector<CEmployee*>();
-        dept = "CSE";
     }
     
     CManager(CManager &other){
@@ -63,6 +62,11 @@ public:
         group.clear();
     }
     
+    string getDepartment()const{return dept;}
+    void setDepartment(string d){dept = d;}
+    
+    vector<CEmployee*> getGroup()const{return group;}
+    void setGroup(vector<CEmployee*> &g){group = g;}
     
     virtual void DisplayEmployee()const{
         cout << firstName << " " << lastName << "\tSalary: " << salary 

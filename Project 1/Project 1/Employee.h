@@ -27,9 +27,12 @@ protected:
     int salary;
 
 public:
-    CEmployee() =default;
-        /*CEmployee():firstName("SubA_First"),lastName("SubA_Second"),
-          //      hireYear(2015),salary(20){}*/
+    CEmployee(){ //Project says we need to implement default constructor
+        firstName = "John";
+        lastName = "Cena";
+        hireYear.tm_year = 2015;
+        salary = 20;
+    }
     CEmployee(string fn, 
         string ln, int muny, 
         tm hy){
@@ -58,12 +61,18 @@ public:
     // CEmployee(string fn, string ln, int s, tm hy):firstName(fn),
     // lastName(ln), salary(s), hireYear(hy.tm_year){}
 
-    virtual ~CEmployee(){};
-
     string getFirstName()const{return firstName;}
+    void setFirstName(string fn){firstName = fn;}
+    
     string getLastName()const{return lastName;}
+    void setLastName(string ln){lastName = ln;}
+    
     tm getHireYear()const{return hireYear;}
+    void setHireYear(int yr){hireYear.tm_year = yr;}
+    void setHireYear(tm yr){hireYear = yr;}
+    
     int getSalary()const{return salary;}
+    int setSalary(int s){salary = s;}
     
     
     virtual void DisplayEmployee()const{
