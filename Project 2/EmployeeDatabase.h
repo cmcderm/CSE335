@@ -22,14 +22,14 @@
 using std::string;
 
 
-class EmployeeDatabase: 
+class EmployeeDatabase{ 
 protected:
     vector<Employee*> database;
 
 public:
-        Database() = default;
+        EmployeeDatabase() = default;
         
-        Database(vector<Employee*> g){
+        EmployeeDatabase(vector<Employee*> g){
             database = g;
         }
 

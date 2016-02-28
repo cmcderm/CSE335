@@ -12,9 +12,11 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
+      <itemPath>BubbleSort.h</itemPath>
       <itemPath>Employee.h</itemPath>
       <itemPath>EmployeeDatabase.h</itemPath>
       <itemPath>Manager.h</itemPath>
+      <itemPath>SortableVector.h</itemPath>
       <itemPath>main.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
@@ -38,12 +40,19 @@
         <rebuildPropChanged>false</rebuildPropChanged>
       </toolsSet>
       <compileType>
+        <ccTool>
+          <standard>8</standard>
+        </ccTool>
       </compileType>
+      <item path="BubbleSort.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="Employee.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="EmployeeDatabase.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Manager.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="SortableVector.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -68,11 +77,15 @@
           <developmentMode>5</developmentMode>
         </asmTool>
       </compileType>
+      <item path="BubbleSort.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="Employee.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="EmployeeDatabase.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Manager.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="SortableVector.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>
