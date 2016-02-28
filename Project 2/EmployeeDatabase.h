@@ -15,6 +15,37 @@
 #define EMPLOYEEDATABASE_H
 
 
+#include "Employee.h"
+#include "Manager.h"
+#include <string>
+
+using std::string;
+
+
+class EmployeeDatabase: 
+protected:
+    vector<Employee*> database;
+
+public:
+        Database() = default;
+        
+        Database(vector<Employee*> g){
+            database = g;
+        }
+
+        void AddRecord(Employee *newAdd){
+            database.push_back(newAdd);
+        }
+        
+        void DisplayRecords(){
+            for(int i = 0; i<database.size();i++){
+                database[i]->DisplayEmployee();
+            }
+        }
+};
+
+
+
 
 #endif /* EMPLOYEEDATABASE_H */
 
