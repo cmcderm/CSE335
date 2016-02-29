@@ -1,9 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /* 
  * File:   Manager.h
  * Author: MacBookPro
@@ -75,7 +69,7 @@ public:
     vector<Employee*> getGroup()const{return group;}
     void setGroup(vector<Employee*> &g){group = g;}
     
-    virtual Employee* getEmployee(int i){return group[i];}
+    virtual Employee getEmployee(int i){return *(group[i]);}
     virtual void addEmployee(Employee* emp){group.push_back(emp);}
     
     virtual void DisplayEmployee()const{

@@ -1,9 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /* 
  * File:   main.cpp
  * Author: Connor
@@ -28,9 +22,9 @@ int main(int argc, char** argv) {
     cout<<"*********************** Before Sorting"<<endl;
     vector<Employee*> ev;
     
-    Employee js1e= Employee("John", "Smith1", 10000, 2011);
-    Employee js2e= Employee("John", "Smith2", 20000, 2012);
-    Employee js3e= Employee("John", "Smith3", 30000, 2013);
+    Employee js1e("John", "Smith1", 10000, 2011);
+    Employee js2e("John", "Smith2", 20000, 2012);
+    Employee js3e("John", "Smith3", 30000, 2013);
     Manager tcm("Tom", "Cruise", "Sales", 40000, 2000);
     tcm.addEmployee(&js1e);
     tcm.addEmployee(&js2e);
@@ -42,11 +36,18 @@ int main(int argc, char** argv) {
     
     EmployeeDatabase edb(ev);
     
-    Employee jd1e= Employee("John", "Doe1", 15000, 2010);
-    Employee jd2e = Employee("John", "Doe2", 25000, 2011);
-    Employee jd3e= Employee("John", "Doe3", 35000, 2012);
+    Employee jd1e("John", "Doe1", 15000, 2010);
+    Employee jd2e("John", "Doe2", 25000, 2011);
+    Employee jd3e("John", "Doe3", 35000, 2012);
     Manager acm("Alice", "Cooper","Human Resources" , 45000, 2000); 
+    acm.addEmployee(&jd1e);
+    acm.addEmployee(&jd2e);
+    acm.addEmployee(&jd3e);
 
+    for(int i = 0; i < ev.size(); i++){
+        delete ev[i];
+    }
+    ev.clear();
     
     return 0;
 }
