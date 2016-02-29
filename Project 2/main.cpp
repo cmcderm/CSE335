@@ -43,6 +43,11 @@ int main(int argc, char** argv) {
     acm.addEmployee(&jd1e);
     acm.addEmployee(&jd2e);
     acm.addEmployee(&jd3e);
+    
+    edb.AddRecord(&acm);
+    edb.AddRecord(&jd1e);
+    edb.AddRecord(&jd2e);
+    edb.AddRecord(&jd3e);
 
     for(int i = 0; i < ev.size(); i++){
         delete ev[i];
