@@ -42,7 +42,7 @@ int main(int argc, char** argv) {
     Employee jd1e= Employee("John", "Doe1", 15000, 2010);
     Employee jd2e = Employee("John", "Doe2", 25000, 2011);
     Employee jd3e= Employee("John", "Doe3", 35000, 2012);
-    //Manager acm = Manager("Alice", "Cooper","Human Resources" , 45000, 2000); 
+    Manager acm("Alice", "Cooper","Human Resources" , 45000, 2000); 
     
     
     

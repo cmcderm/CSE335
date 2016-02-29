@@ -29,7 +29,6 @@ public:
         m_LastName = "DefMan_second";
         m_hire = 2015;
         m_salary = 42;
-        //group = vector<Employee*>();
         dept = "CSE";
     }
     Manager(string fn, string ln, string d, int s, short int hy)

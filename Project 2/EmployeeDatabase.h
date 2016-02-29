@@ -18,11 +18,13 @@
 #include "Employee.h"
 #include "Manager.h"
 #include <string>
+#include <algorithm>
+
+#include "SortableVector.h"
 
 using std::string;
 
-
-class EmployeeDatabase : SortableVector{ 
+class EmployeeDatabase : public SortableVector{ 
 protected:
     vector<Employee*> database;
 
@@ -37,6 +39,24 @@ public:
             for(int i = 0; i < database.size(); i++){
                 delete database[i];
             }
+        }
+        
+        virtual unsigned int getSize() const {
+            return database.size();
+        }
+        
+        virtual bool smaller(int i, int j) const{
+            return database[i] > database[j];
+        }
+        
+        string toLower(string str){
+            transform(str.begin(), str.end(), str.begin(), ::tolower);
+        }
+        
+        virtual void swap(int i, int j){
+            Employee* temp = database[i];
+            database[i] = database[j];
+            database[j] = temp;
         }
 
         void AddRecord(Employee *newAdd){
