@@ -75,6 +75,9 @@ public:
     vector<Employee*> getGroup()const{return group;}
     void setGroup(vector<Employee*> &g){group = g;}
     
+    virtual Employee* getEmployee(int i){return group[i];}
+    virtual void addEmployee(Employee* emp){group.push_back(emp);}
+    
     virtual void DisplayEmployee()const{
         cout << m_FirstName << " " << m_LastName << ": " << m_salary 
                 << "; " << m_hire << "; "<<dept;

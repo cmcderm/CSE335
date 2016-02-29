@@ -16,17 +16,13 @@
 
 #include <cstdlib>
 #include <vector>
+
 class SortableVector{
 public:
     virtual unsigned int getSize() const=0;
     virtual bool smaller(int i, int j) const=0;
     virtual void swap(int i, int j) =0;
 };
-
-
-
-
-
 
 #endif /* SORTTABLEVECTOR_H */
 

@@ -20,7 +20,6 @@
 #include "EmployeeDatabase.h"
 
 
-using namespace std;
 /*
  * 
  */
@@ -32,28 +31,23 @@ int main(int argc, char** argv) {
     Employee js1e= Employee("John", "Smith1", 10000, 2011);
     Employee js2e= Employee("John", "Smith2", 20000, 2012);
     Employee js3e= Employee("John", "Smith3", 30000, 2013);
+    Manager tcm("Tom", "Cruise", "Sales", 40000, 2000);
+    tcm.addEmployee(&js1e);
+    tcm.addEmployee(&js2e);
+    tcm.addEmployee(&js3e);
+    
     ev.push_back(&js1e);
     ev.push_back(&js2e);
     ev.push_back(&js3e);
     
     EmployeeDatabase edb(ev);
-    Manager tcm("Tom", "Cruise", "Sales", 40000, 2000);
     
     Employee jd1e= Employee("John", "Doe1", 15000, 2010);
     Employee jd2e = Employee("John", "Doe2", 25000, 2011);
     Employee jd3e= Employee("John", "Doe3", 35000, 2012);
     Manager acm("Alice", "Cooper","Human Resources" , 45000, 2000); 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-   
 
+    
     return 0;
 }
 
