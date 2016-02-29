@@ -22,15 +22,21 @@
 using std::string;
 
 
-class EmployeeDatabase{ 
+class EmployeeDatabase : SortableVector{ 
 protected:
     vector<Employee*> database;
 
 public:
-        EmployeeDatabase() = default;
+        EmployeeDatabase(){}
         
-        EmployeeDatabase(vector<Employee*> g){
+        EmployeeDatabase(const vector<Employee*>& g){
             database = g;
+        }
+        
+        virtual ~EmployeeDatabase(){
+            for(int i = 0; i < database.size(); i++){
+                delete database[i];
+            }
         }
 
         void AddRecord(Employee *newAdd){

@@ -18,9 +18,15 @@
 
 #include "SortableVector.h"
 
-
-class BubbleSort{
+class BubbleSortInterface{
 public:
+    void Sort(SortableVector* sortVect){
+        
+    }
+    virtual 
+};
+
+class BubbleSortDecreasing : public BubbleSortInterface{
     void sortDecreasing(SortableVector* sortableVector){
         bool sorted = false;
         int n=sortableVector->getSize();
@@ -35,8 +41,9 @@ public:
             n--;
         }
     }
+};   
     
-    
+class BubbleSortIncreasing : BubbleSortInterface {
     void sortIncreasing(SortableVector* sortableVector){
         bool sorted = false;
         int n=sortableVector->getSize();
@@ -51,19 +58,6 @@ public:
             n--;
         }
     }
-        
-        
-        
-        
-        
-    }
-    
-    
-    
-    
-    
-    
-    
 };
 
 
