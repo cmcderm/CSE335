@@ -20,6 +20,7 @@ using std::string;
 
 class EmployeeDatabase : public SortableVector{ 
 protected:
+    string name;
     vector<Employee*> database;
 
 public:
@@ -62,6 +63,12 @@ public:
                 database[i]->DisplayEmployee();
             }
             database.clear();
+        }
+        
+        void print() const{
+            for(int i = 0; i < database.size(); i++){
+                database[i]->DisplayEmployee();
+            }
         }
 };
 

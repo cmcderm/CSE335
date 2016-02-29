@@ -18,25 +18,21 @@ class Employee{
 protected:
     string m_FirstName;
     string m_LastName;
-    //string m_dept;
     unsigned short m_salary;
     unsigned short m_hire;
 public:
     Employee(string firstName, 
             string lastName,
-            //string dept, 
             unsigned short salary,
             unsigned short hireYear){
         m_FirstName = firstName;
         m_LastName = lastName;
         m_salary=salary;
-        //m_dept = dept;
         m_hire = hireYear;
     };
     Employee(){
          m_FirstName = "";
         m_LastName = "";
-        //m_dept = "";
         m_hire = 0;
     }
     
@@ -70,7 +66,6 @@ public:
         cout << m_FirstName << " " << m_LastName << ": " << m_salary 
                 << "; " << m_hire << endl;
     }
-    
 };
 
 

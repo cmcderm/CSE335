@@ -16,6 +16,7 @@ public:
     virtual unsigned int getSize() const=0;
     virtual bool smaller(int i, int j) const=0;
     virtual void swap(int i, int j) =0;
+    virtual void print() const = 0;
     
     virtual ~SortableVector(){}
 };

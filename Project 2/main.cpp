@@ -13,10 +13,6 @@
 #include "Manager.h"
 #include "EmployeeDatabase.h"
 
-
-/*
- * 
- */
 int main(int argc, char** argv) {
     
     cout<<"*********************** Before Sorting"<<endl;
@@ -33,6 +29,8 @@ int main(int argc, char** argv) {
     ev.push_back(&js1e);
     ev.push_back(&js2e);
     ev.push_back(&js3e);
+    ev.push_back(&tcm);
+    
     
     EmployeeDatabase edb(ev);
     
@@ -44,10 +42,14 @@ int main(int argc, char** argv) {
     acm.addEmployee(&jd2e);
     acm.addEmployee(&jd3e);
     
-    edb.AddRecord(&acm);
     edb.AddRecord(&jd1e);
     edb.AddRecord(&jd2e);
     edb.AddRecord(&jd3e);
+    edb.AddRecord(&acm);
+    
+    edb.print();
+    
+    cout << "*********************** Before Sorting" << endl;
 
     for(int i = 0; i < ev.size(); i++){
         delete ev[i];

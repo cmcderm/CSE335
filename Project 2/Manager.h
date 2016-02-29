@@ -74,7 +74,7 @@ public:
     
     virtual void DisplayEmployee()const{
         cout << m_FirstName << " " << m_LastName << ": " << m_salary 
-                << "; " << m_hire << "; "<<dept;
+                << "; " << m_hire << "; "<<dept << endl;
     }
 };
 
