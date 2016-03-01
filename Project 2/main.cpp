@@ -51,8 +51,9 @@ int main(int argc, char** argv) {
     edb.DisplayRecords();
     
     cout << "*********************** After Sorting By FirstName Alphabetical" << endl;
-    
-    
+    BubbleSortFN BSFN;
+    BSFN.Sort(&edb);
+    edb.DisplayRecords();
     
     cout << "*********************** After Sorting By FirstName Reverse Alphabetical" << endl;
     
