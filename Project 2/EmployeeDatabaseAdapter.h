@@ -26,7 +26,16 @@ class EmployeeDatabaseComparisons{
 };
 
 class EmployeeDatabaseAdapter : public EmployeeDatabase, public EmployeeDatabaseComparisons {
+public:
+    EmployeeDatabaseAdapter(){}
     
+    EmployeeDatabaseAdapter(const vector<Employee*>& g){
+        database = g;
+    }
+    
+    virtual unsigned int getSize() const {
+        return database.size();
+    }
     
     virtual bool compareFN(int i, int j) const {
         return database[i]->getFName() > database[j]->getFName();

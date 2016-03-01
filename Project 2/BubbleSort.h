@@ -20,7 +20,7 @@ public:
         while(!sorted){
             sorted = true;
             for(int i = 0; i < n; i++){
-                if(compare(&empDatabase, i, i-1)){
+                if(compare(empDatabase, i, i-1)){
                     empDatabase->swap(i-1, i);
                     sorted = false;
                 }
@@ -28,28 +28,52 @@ public:
             n--;
         }
     }
-    virtual bool compare(SortableVector* sortVect, int i, int j) const = 0;
-    virtual bool compareReverse(SortableVector* sortVect, int i, int j) const = 0;
+    virtual bool compare(EmployeeDatabaseAdapter* empDatabase, int i, int j) const = 0;
 };
 
 class BubbleSortFN : public BubbleSortInterface{
     virtual bool compare(EmployeeDatabaseAdapter* empDatabase, int i, int j) const {
         return empDatabase->compareFN(i, j);
     }
-    virtual bool compareReverse(EmployeeDatabaseAdapter* empDatabase, int i, int j) const {
+};
+
+class BubbleSortFNReverse : public BubbleSortInterface{
+    virtual bool compare(EmployeeDatabaseAdapter* empDatabase, int i, int j) const {
         return !empDatabase->compareFN(i, j);
     }
 };   
 
 class BubbleSortLN : public BubbleSortInterface{
-    virtual bool compare(SortableVector* sortVect, int i, int j) const {
-        return sortVect.compareLN(i, j);
+    virtual bool compare(EmployeeDatabaseAdapter* empDatabase, int i, int j) const {
+        return empDatabase->compareLN(i, j);
     }
-    
-    virtual bool compareReverse(SortableVector* sortVect, int i, int j) const {
-        return sortVect->compareLN(i, j);
+};
+class BubbleSortLNReverse : public BubbleSortInterface{
+    virtual bool compare(EmployeeDatabaseAdapter* empDatabase, int i, int j) const {
+        return !empDatabase->compareLN(i, j);
     }
-    
+};
+
+class BubbleSortSalary : public BubbleSortInterface{
+    virtual bool compare(EmployeeDatabaseAdapter* empDatabase, int i, int j) const {
+        return empDatabase->compareSalary(i, j);
+    }
+};
+class BubbleSortSalaryReverse : public BubbleSortInterface{
+    virtual bool compare(EmployeeDatabaseAdapter* empDatabase, int i, int j) const {
+        return !empDatabase->compareSalary(i, j);
+    }
+};
+
+class BubbleSortYear : public BubbleSortInterface{
+    virtual bool compare(EmployeeDatabaseAdapter* empDatabase, int i, int j) const {
+        return empDatabase->compareYR(i, j);
+    }
+};
+class BubbleSortYearReverse : public BubbleSortInterface{
+    virtual bool compare(EmployeeDatabaseAdapter* empDatabase, int i, int j) const {
+        return !empDatabase->compareYR(i, j);
+    }
 };
 #endif /* BUBBLESORT_H */
 
