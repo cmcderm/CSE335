@@ -5,7 +5,6 @@
                    displayName="Header Files"
                    projectFiles="true">
       <itemPath>EmployeeAdapter.h</itemPath>
-      <itemPath>EmployeeDatabaseAdapter.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
@@ -17,6 +16,7 @@
       <itemPath>BubbleSort.h</itemPath>
       <itemPath>Employee.h</itemPath>
       <itemPath>EmployeeDatabase.h</itemPath>
+      <itemPath>EmployeeDatabaseAdapter.h</itemPath>
       <itemPath>Manager.h</itemPath>
       <itemPath>SortableVector.h</itemPath>
       <itemPath>main.cpp</itemPath>

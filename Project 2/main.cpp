@@ -14,7 +14,7 @@
 #include "EmployeeDatabase.h"
 #include "BubbleSort.h"
 
-int main(int argc, char** argv) {
+int main() {
     
     cout<<"*********************** Before Sorting"<<endl;
     vector<Employee*> ev;
@@ -51,21 +51,46 @@ int main(int argc, char** argv) {
     edb.DisplayRecords();
     
     cout << "*********************** After Sorting By FirstName Alphabetical" << endl;
+   
     BubbleSortFN BSFN;
     BSFN.Sort(&edb);
     edb.DisplayRecords();
     
     cout << "*********************** After Sorting By FirstName Reverse Alphabetical" << endl;
     
+    BubbleSortFNReverse BSFNR;
+    BSFNR.Sort(&edb);
+    edb.DisplayRecords();
+    
     cout<<"*********************** After Sorting By LastName Alphabetical"<<endl;
+    
+    BubbleSortLN BSLN;
+    BSLN.Sort(&edb);
+    edb.DisplayRecords();
     
     cout<<"*********************** After Sorting By Salary Increasing"<<endl;
     
+    BubbleSortSalary BSS;
+    BSS.Sort(&edb);
+    edb.DisplayRecords();
+    
     cout<<"*********************** After Sorting By Salary Decreasing"<<endl;
+    
+    BubbleSortSalaryReverse BSSR;
+    BSSR.Sort(&edb);
+    edb.DisplayRecords();
     
     cout<<"*********************** After Sorting By Hireyear Increasing"<<endl;
     
+    BubbleSortYear BSY;
+    BSY.Sort(&edb);
+    edb.DisplayRecords();
+    
     cout<<"*********************** After Sorting By Hireyear Decreasing"<<endl;
+    
+    BubbleSortYearReverse BSYR;
+    BSYR.Sort(&edb);
+    edb.DisplayRecords();
     
     return 0;
 }
