@@ -4,6 +4,8 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
+      <itemPath>EmployeeAdapter.h</itemPath>
+      <itemPath>EmployeeDatabaseAdapter.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
@@ -48,7 +50,11 @@
       </item>
       <item path="Employee.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="EmployeeAdapter.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="EmployeeDatabase.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="EmployeeDatabaseAdapter.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Manager.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -81,7 +87,11 @@
       </item>
       <item path="Employee.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="EmployeeAdapter.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="EmployeeDatabase.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="EmployeeDatabaseAdapter.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Manager.h" ex="false" tool="3" flavor2="0">
       </item>

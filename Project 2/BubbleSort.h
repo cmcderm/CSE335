@@ -10,36 +10,46 @@
 #define BUBBLESORT_H
 
 #include "SortableVector.h"
+#include "EmployeeDatabaseAdapter.h"
 
 class BubbleSortInterface{
 public:
-    void Sort(SortableVector* sortVect){
+    void Sort(EmployeeDatabaseAdapter* empDatabase){
         bool sorted = false;
-        int n = sortVect->getSize();
+        int n = empDatabase->getSize();
         while(!sorted){
             sorted = true;
             for(int i = 0; i < n; i++){
-                if(compare(sortVect)){
-                    sortVect->swap(i-1, i);
+                if(compare(&empDatabase, i, i-1)){
+                    empDatabase->swap(i-1, i);
                     sorted = false;
                 }
             }
             n--;
         }
     }
-    virtual bool compare() const = 0;
+    virtual bool compare(SortableVector* sortVect, int i, int j) const = 0;
+    virtual bool compareReverse(SortableVector* sortVect, int i, int j) const = 0;
 };
 
-class BubbleSortDecreasing : public BubbleSortInterface{
-    virtual bool compare(SortableVector* sortVect) const {
-        return sortVect->smaller();
+class BubbleSortFN : public BubbleSortInterface{
+    virtual bool compare(EmployeeDatabaseAdapter* empDatabase, int i, int j) const {
+        return empDatabase->compareFN(i, j);
+    }
+    virtual bool compareReverse(EmployeeDatabaseAdapter* empDatabase, int i, int j) const {
+        return !empDatabase->compareFN(i, j);
     }
 };   
-    
-class BubbleSortIncreasing : BubbleSortInterface {
-    virtual bool compare(SortableVector* sortVect) const {
-        return !sortVect->smaller();
+
+class BubbleSortLN : public BubbleSortInterface{
+    virtual bool compare(SortableVector* sortVect, int i, int j) const {
+        return sortVect.compareLN(i, j);
     }
+    
+    virtual bool compareReverse(SortableVector* sortVect, int i, int j) const {
+        return sortVect->compareLN(i, j);
+    }
+    
 };
 #endif /* BUBBLESORT_H */
 
