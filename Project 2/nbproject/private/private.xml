@@ -7,10 +7,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/Users/MacBookPro/GitHub/CSE335/Project%202/EmployeeDatabase.h</file>
             <file>file:/Users/MacBookPro/GitHub/CSE335/Project%202/Employee.h</file>
             <file>file:/Users/MacBookPro/GitHub/CSE335/Project%202/Manager.h</file>
             <file>file:/Users/MacBookPro/GitHub/CSE335/Project%202/main.cpp</file>
+            <file>file:/Users/MacBookPro/GitHub/CSE335/Project%202/BubbleSort.h</file>
+            <file>file:/Users/MacBookPro/GitHub/CSE335/Project%202/EmployeeDatabaseAdapter.h</file>
         </group>
     </open-files>
 </project-private>
