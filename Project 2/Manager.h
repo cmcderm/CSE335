@@ -57,10 +57,6 @@ public:
     }
     
     virtual ~Manager(){
-        for(int i = 0; i<group.size(); i++){
-            delete (group[i]);
-        }
-        group.clear();
     }
     
     string getDepartment()const{return dept;}
