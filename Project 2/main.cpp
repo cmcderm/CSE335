@@ -49,8 +49,24 @@ int main(int argc, char** argv) {
     
     edb.print();
     
-    cout << "*********************** Before Sorting" << endl;
-
+    cout << "*********************** After Sorting By FirstName Alphabetical" << endl;
+    
+    
+    
+    cout << "*********************** After Sorting By FirstName Reverse Alphabetical" << endl;
+    
+    cout<<"*********************** After Sorting By LastName Alphabetical"<<endl;
+    
+    cout<<"*********************** After Sorting By Salary Increasing"<<endl;
+    
+    cout<<"*********************** After Sorting By Salary Decreasing"<<endl;
+    
+    cout<<"*********************** After Sorting By Hireyear Increasing"<<endl;
+    
+    cout<<"*********************** After Sorting By Hireyear Decreasing"<<endl;
+    
+    
+    
     for(int i = 0; i < ev.size(); i++){
         delete ev[i];
     }

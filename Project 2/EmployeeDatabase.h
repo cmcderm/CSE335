@@ -46,6 +46,7 @@ public:
         
         string toLower(string str){
             transform(str.begin(), str.end(), str.begin(), ::tolower);
+            return str;
         }
         
         virtual void swap(int i, int j){
