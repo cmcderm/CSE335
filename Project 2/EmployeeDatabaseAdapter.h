@@ -50,7 +50,7 @@ public:
     }
     
     virtual bool compareYR(int i, int j) const {
-        return database[i]->getHireYear() > database[j]->getSalary();
+        return database[i]->getHireYear() > database[j]->getHireYear();
     }
 };
 
