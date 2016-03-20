@@ -36,6 +36,20 @@
       </toolsSet>
       <compileType>
       </compileType>
+      <item path="Department.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Employee.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Group.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Manager.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="PrintVisitor.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="SumsalaryVisitor.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Visitor.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>
     </conf>
@@ -59,6 +73,20 @@
           <developmentMode>5</developmentMode>
         </asmTool>
       </compileType>
+      <item path="Department.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Employee.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Group.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Manager.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="PrintVisitor.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="SumsalaryVisitor.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Visitor.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>
     </conf>
