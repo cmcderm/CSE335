@@ -22,14 +22,13 @@ using std::vector;
 
 class Department : public Unit{
 protected:
-    string name;
+    string m_name;
     vector<Unit*> m_members;
 public:
-    string getName(){return name;}
-    
-    virtual void addDepartmentMember(Unit* u){
-        m_members.push_back(u);
+    Department(string n){
+        m_name = n;
     }
+    string getName(){return m_name;}
     
     virtual int addDepartmentMember(Unit* u){m_members.push_back(u);}
     Unit* getDepartmentMember(int index){return m_members[index];}

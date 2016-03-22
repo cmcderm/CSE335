@@ -17,6 +17,7 @@
 #include <Vector>
 
 #include "Employee.h"
+#include "Visitor.h"
 
 using std::vector;
 
@@ -25,6 +26,9 @@ protected:
     string name;
     vector<Employee*> m_group;
 public:
+    Group(string n){
+        name = n;
+    }
     string getName(){ return name;}
     
     void addGroupMember(Employee* emp){m_group.push_back(emp);}
@@ -34,6 +38,8 @@ public:
         return m_group.size();
     }
     Employee* getEmployee(int index){ return m_group[index]; }
+    
+    virtual void Accept(Visitor* v){v->VisitGroup(this);}
 };
 
 #endif /* GROUP_H */

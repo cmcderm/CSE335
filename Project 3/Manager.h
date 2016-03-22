@@ -11,6 +11,7 @@
 #include <vector>
 
 #include "Employee.h"
+#include "Visitor.h"
 
 using std::vector;
 
@@ -27,12 +28,8 @@ public:
         m_salary = 42;
         m_rank = 5;
     }
-    Manager(string fn, string ln, string d, int s, short int hy, short int r)
-    :Employee(fn, ln, s, hy){
-        m_FirstName = fn;
-        m_LastName = ln;
-        m_hire = hy;
-        m_salary = s;
+    Manager(string fn, string ln, int s, short int hy, short int ID, short int r)
+    :Employee(fn, ln, s, hy, ID){
         m_rank = r;
     }
     
@@ -42,7 +39,6 @@ public:
         m_salary = other.m_salary;
         m_hire = other.m_hire;
         m_rank = other.m_rank;
-        //group = other.group;
     }
     
     Manager& operator=(Manager &other){
@@ -60,8 +56,8 @@ public:
     virtual ~Manager(){
     }
     
-    string getRank()const{return m_rank;}
-    void setRank(string d){m_rank = d;}
+    unsigned short getRank()const{return m_rank;}
+    void setRank(unsigned short d){m_rank = d;}
     
     vector<Employee*> getGroup()const{return group;}
     void setGroup(vector<Employee*> &g){group = g;}

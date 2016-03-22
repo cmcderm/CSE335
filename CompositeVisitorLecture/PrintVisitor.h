@@ -37,28 +37,28 @@ public:
         cout << "(";
         add->getLeft()->Accept(this); 
         cout << " + ";
-        add->getLeft()->Accept(this);
+        add->getRight()->Accept(this);
         cout << ")";
     }
     virtual void visitSubtract(Subtract* sub){
         cout << "(";
         sub->getLeft()->Accept(this); 
         cout << " - ";
-        sub->getLeft()->Accept(this);
+        sub->getRight()->Accept(this);
         cout << ")";
     }
     virtual void visitMultiply(Multiply* mult){
         cout << "(";
         mult->getLeft()->Accept(this); 
         cout << " * ";
-        mult->getLeft()->Accept(this);
+        mult->getRight()->Accept(this);
         cout << ")";
     }
     virtual void visitDivide(Divide* div){
         cout << "(";
         div->getLeft()->Accept(this); 
         cout << " / ";
-        div->getLeft()->Accept(this);
+        div->getRight()->Accept(this);
         cout << ")";
     }
 };

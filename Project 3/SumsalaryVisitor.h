@@ -15,23 +15,22 @@
 #define SUMSALARYVISITOR_H
 
 #include "Visitor.h"
-#include <stack>
 #include "Unit.h"
 #include "Employee.h"
 #include "Department.h"
 #include "Group.h"
 
 
-class SumsalaryVisitor:public Visitor{
+class SumsalaryVisitor : public Visitor{
 protected:
     long totalSalary;
 public:
     virtual void VisitEmployee(Employee* emp){
-        totalSalary += emp.getSalary();
+        totalSalary += emp->getSalary();
     }
 
     virtual void VisitManager(Manager* man){
-        totalSalary += man.getSalary();
+        totalSalary += man->getSalary();
     }
 
     virtual void VisitDepartment(Department* dept){
@@ -41,7 +40,7 @@ public:
     }
 
     virtual void VisitGroup(Group* group){
-        for(int i = 0; i < group.getSize(); i++){
+        for(int i = 0; i < group->getSize(); i++){
             totalSalary += group->getGroupMember(i)->getSalary();
         }
     }

@@ -22,25 +22,10 @@ class Group;
 class Visitor{
     
 public:
-    virtual void VisitEmployee(Employee* emp){
-        emp->DisplayEmployee();
-    }
-
-    virtual void VisitManager(Manager* man){
-        man->DisplayEmployee();
-    }
-
-    virtual void VisitDepartment(Department* dept){
-        for(int i = 0; i < dept->getSize(); i++){
-            dept->getDepartmentMember(i)->Accept(this);
-        }
-    }
-
-    virtual void VisitGroup(Group* group){
-        for(int i = 0; i < group.getSize(); i++){
-            group->getGroupMember(i)->Accept(this);
-        }            
-    }
+    virtual void VisitEmployee(Employee* emp)=0;
+    virtual void VisitManager(Manager* man)=0;
+    virtual void VisitDepartment(Department* dept)=0;
+    virtual void VisitGroup(Group* group)=0;
 };
 
 
