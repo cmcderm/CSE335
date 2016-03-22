@@ -16,34 +16,27 @@
 
 
 #include "Visitor.h"
-#include "Entity.h"
-#include "Directory.h"
+#include "Unit.h"
+#include "Department.h"
+#include "Employee.h"
 
 class PrintVisitor: public Visitor{
-    public:
-        virtual void VisitFile(File* file){
-            cout<<"(file name="<<file->getName()<<", file size="<<
-                    file->getSize()<<"); ";
-        }
-        
-        virtual void VisitDirectory(Directory* dir){
-            cout<<"Directory "<<dir->getName()<<" contains: (";
-            for (int i=0; i<dir->getChildrenSize();i++){
-                dir->getChild(i)->Accept(this);
-            }
-            cout<<"); ";
-        }
+public:
+    virtual void VisitEmployee(Employee* emp){
     
+    }
+
+    virtual void VisitManager(Manager* man){
     
+    }
+
+    virtual void VisitDepartment(Department* dept){
     
-    
-    
-    
-    
-    
-    
-    
-    
+    }
+
+    virtual void VisitGroup(Group* group){
+
+    }
 };
 
 

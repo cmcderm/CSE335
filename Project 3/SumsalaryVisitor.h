@@ -16,45 +16,41 @@
 
 #include "Visitor.h"
 #include <stack>
-#include "Entity.h"
-#include "Directory.h"
-
+#include "Unit.h"
+#include "Employee.h"
+#include "Department.h"
+#include "Group.h"
 
 
 class SumsalaryVisitor:public Visitor{
-    protected:
-        stack<unsigned int> m_stack;
-    public:
-        virtual void VisitFile(File* file){
-            m_stack.push(file->getName().size());
+protected:
+    long totalSalary;
+public:
+    virtual void VisitEmployee(Employee* emp){
+        totalSalary += emp.getSalary();
+    }
+
+    virtual void VisitManager(Manager* man){
+        totalSalary += man.getSalary();
+    }
+
+    virtual void VisitDepartment(Department* dept){
+        for(int i = 0; i < dept->getSize(); i++){
+            dept->getDepartmentMember(i)->Accept(this);
         }
-        
-        virtual void VisitDirectory(Directory* dir){
-            unsigned int sum = dir->getName().size();
-            for(int i=0; i<dir->getChildrenSize(); i++){
-                dir->getChild(i)->Accept(this);
-            }
-            
-            for(int i=0; i<dir->getChildrenSize();i++){
-                sum+=m_stack.top();
-                m_stack.pop();
-            }
-            
-            m_stack.push(sum);
-            
+    }
+
+    virtual void VisitGroup(Group* group){
+        for(int i = 0; i < group.getSize(); i++){
+            totalSalary += group->getGroupMember(i)->getSalary();
         }
-        double getValue(){
-            unsigned int result =m_stack.top();
-            m_stack.pop();
-            return result;
-        }
-        
-        
-        
-        
-        
-        
-        
+    }
+    
+    virtual long getTotalSalary(){
+        return totalSalary;
+    }
+    
+    virtual void restTotalSalary(){totalSalary = 0;}
 };
 
 

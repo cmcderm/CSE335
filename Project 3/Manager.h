@@ -8,14 +8,16 @@
 #ifndef MANAGER_H
 #define MANAGER_H
 
-
-#include "Employee.h"
 #include <vector>
 
-class Manager: public Employee{
+#include "Employee.h"
+
+using std::vector;
+
+class Manager : public Employee{
 protected:
     vector<Employee*> group;
-    string dept;
+    unsigned short m_rank;
         
 public:
     Manager(){
@@ -23,16 +25,15 @@ public:
         m_LastName = "DefMan_second";
         m_hire = 2015;
         m_salary = 42;
-        dept = "CSE";
+        m_rank = 5;
     }
-    Manager(string fn, string ln, string d, int s, short int hy)
+    Manager(string fn, string ln, string d, int s, short int hy, short int r)
     :Employee(fn, ln, s, hy){
         m_FirstName = fn;
         m_LastName = ln;
         m_hire = hy;
         m_salary = s;
-        dept = d;
-       // group = g; //bad practice but it's how the main is supposed to work it seems?
+        m_rank = r;
     }
     
     Manager(Manager &other){
@@ -40,7 +41,7 @@ public:
         m_LastName = other.m_LastName;
         m_salary = other.m_salary;
         m_hire = other.m_hire;
-        dept = other.dept;
+        m_rank = other.m_rank;
         //group = other.group;
     }
     
@@ -50,7 +51,7 @@ public:
             this->m_LastName = other.m_LastName;
             this->m_salary = other.m_salary;
             this->m_hire = other.m_hire;
-            this->dept = other.dept;
+            this->m_rank = other.m_rank;
            // this->m_group = other.group;
         }
         return *this;
@@ -59,8 +60,8 @@ public:
     virtual ~Manager(){
     }
     
-    string getDepartment()const{return dept;}
-    void setDepartment(string d){dept = d;}
+    string getRank()const{return m_rank;}
+    void setRank(string d){m_rank = d;}
     
     vector<Employee*> getGroup()const{return group;}
     void setGroup(vector<Employee*> &g){group = g;}
@@ -70,7 +71,7 @@ public:
     
     virtual void DisplayEmployee()const{
         cout << m_FirstName << " " << m_LastName << ": " << m_salary 
-                << "; " << m_hire << "; "<<dept << endl;
+                << "; " << m_hire << "; "<< m_rank << endl;
     }
 };
 

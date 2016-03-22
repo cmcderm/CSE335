@@ -14,21 +14,33 @@
 #ifndef VISITOR_H
 #define VISITOR_H
 
-//#include "Directory.h"
-class Directory;
-class File;
-//#include "File.h"
+class Employee;
+class Manager;
+class Department;
+class Group;
 
 class Visitor{
     
 public:
-    virtual void VisitFile(File*)=0;
-    virtual void VisitDirectory(Directory*)=0;
-    
-    
-    
-    
-    
+    virtual void VisitEmployee(Employee* emp){
+        emp->DisplayEmployee();
+    }
+
+    virtual void VisitManager(Manager* man){
+        man->DisplayEmployee();
+    }
+
+    virtual void VisitDepartment(Department* dept){
+        for(int i = 0; i < dept->getSize(); i++){
+            dept->getDepartmentMember(i)->Accept(this);
+        }
+    }
+
+    virtual void VisitGroup(Group* group){
+        for(int i = 0; i < group.getSize(); i++){
+            group->getGroupMember(i)->Accept(this);
+        }            
+    }
 };
 
 

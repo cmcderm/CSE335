@@ -12,28 +12,37 @@
 #include <string>
 #include <iostream>
 
-using namespace std;
+#include "Unit.h"
+#include "Visitor.h"
 
-class Employee{
+using std::cout;
+using std::endl;
+
+class Employee : public Unit{
 protected:
     string m_FirstName;
     string m_LastName;
     unsigned short m_salary;
     unsigned short m_hire;
+    unsigned short m_ID;
 public:
     Employee(string firstName, 
             string lastName,
             unsigned short salary,
-            unsigned short hireYear){
+            unsigned short hireYear,
+            unsigned short ID){
         m_FirstName = firstName;
         m_LastName = lastName;
         m_salary=salary;
         m_hire = hireYear;
+        m_ID = ID;
     };
     Employee(){
-         m_FirstName = "";
+        m_FirstName = "";
         m_LastName = "";
+        m_salary = 0;
         m_hire = 0;
+        m_ID = 0;
     }
     
     virtual ~Employee(){}
@@ -63,9 +72,11 @@ public:
         m_hire=hireY;
     }
     virtual void DisplayEmployee()const{
-        cout << m_FirstName << " " << m_LastName << ": " << m_salary 
-                << "; " << m_hire << endl;
+        cout << m_FirstName << " " << m_LastName << "; " << m_salary 
+                << "; " << m_hire << "; " << m_ID << endl;
     }
+    
+    virtual void Accept(Visitor* v){v->VisitEmployee(this);}
 };
 
 

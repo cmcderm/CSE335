@@ -14,7 +14,27 @@
 #ifndef GROUP_H
 #define GROUP_H
 
+#include <Vector>
 
+#include "Employee.h"
+
+using std::vector;
+
+class Group : public Unit{
+protected:
+    string name;
+    vector<Employee*> m_group;
+public:
+    string getName(){ return name;}
+    
+    void addGroupMember(Employee* emp){m_group.push_back(emp);}
+    Employee* getGroupMember(int index){return m_group[index];}
+    
+    int getSize(){
+        return m_group.size();
+    }
+    Employee* getEmployee(int index){ return m_group[index]; }
+};
 
 #endif /* GROUP_H */
 

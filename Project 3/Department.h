@@ -14,7 +14,31 @@
 #ifndef DEPARTMENT_H
 #define DEPARTMENT_H
 
+#include <vector>
 
+#include "Visitor.h"
+
+using std::vector;
+
+class Department : public Unit{
+protected:
+    string name;
+    vector<Unit*> m_members;
+public:
+    string getName(){return name;}
+    
+    virtual void addDepartmentMember(Unit* u){
+        m_members.push_back(u);
+    }
+    
+    virtual int addDepartmentMember(Unit* u){m_members.push_back(u);}
+    Unit* getDepartmentMember(int index){return m_members[index];}
+    int getSize(){
+        return m_members.size();
+    }
+    
+    virtual void Accept(Visitor* v){v->VisitDepartment(this);}
+};
 
 #endif /* DEPARTMENT_H */
 

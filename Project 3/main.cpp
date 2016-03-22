@@ -28,7 +28,7 @@ int main(int argc, char *argv[]) {
     Employee JohnDoe2("John", "Doe2", 25000, 2011,7);
     Employee JohnDoe3("John", "Doe3", 35000, 2012,8);
     Manager AliceCooperManager("Alice","Cooper",45000, 2000, 9,2);
-
+    
 
 
     cout<<"===================================================== Test Visitor Pattern"<<endl;
@@ -58,4 +58,4 @@ int main(int argc, char *argv[]) {
     salesDept.Accept(&sv);
     cout<<"Total Salary = "<<sv.getTotalSalary()<<endl;
     sv.restTotalSalary();
-    }
+}
