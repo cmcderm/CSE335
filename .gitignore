@@ -1,2 +1,61 @@
 /Project 2/dist/
 /Project 2/build/
+/Ex1Q2/dist/
+/Ex1Q2/build/
+/Ex1Q3/build/
+/Ex1Q3/dist/
+Ex1Q2/nbproject/Package-Release.bash
+
+Ex1Q2/nbproject/private/configurations.xml
+
+Ex1Q2/nbproject/private/launcher.properties
+
+Ex1Q2/nbproject/project.xml
+
+Ex1Q2/nbproject/private/Makefile-variables.mk
+
+Ex1Q2/SubstringInterface.h
+
+Ex1Q3/.dep.inc
+
+Ex1Q3/main.cpp
+
+Ex1Q3/nbproject/configurations.xml
+
+Ex1Q3/nbproject/Makefile-Release.mk
+
+Ex1Q3/nbproject/Package-Debug.bash
+
+Ex1Q3/nbproject/Makefile-variables.mk
+
+Ex1Q3/nbproject/Package-Release.bash
+
+*.xml
+
+*.h
+
+*.mk
+
+*.bash
+
+*.properties
+
+*.xml
+
+Ex1Q2/Makefile
+
+*.inc
+
+*.xml
+
+Project 3/nbproject/project.xml
+
+Project 3/nbproject/private/private.xml
+
+Project 3/nbproject/private/private.xml
+
+Ex1Q3/Makefile
+
+Ex1Q2/main.cpp
+
+Project 3/nbproject/private/private.xml
