@@ -59,3 +59,15 @@ Ex1Q3/Makefile
 Ex1Q2/main.cpp
 
 Project 3/nbproject/private/private.xml
+
+*.mk
+
+*.mk
+
+*.mk
+
+*.xml
+
+Project 3/nbproject/Package-Debug.bash
+/Project 3/dist/
+/Project 3/build/
