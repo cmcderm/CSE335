@@ -27,6 +27,7 @@ using std::endl;
 
 class PrintVisitor: public Visitor{
 public:
+    
     virtual void VisitEmployee(Employee* emp){
         emp->DisplayEmployee();
     }
@@ -45,7 +46,11 @@ public:
     virtual void VisitGroup(Group* group){
         cout << group->getName() << endl;
         for(int i = 0; i < group->getSize(); i++){
-            cout << "\t";
+            /*if(i>0){
+                cout << "\t";
+            }
+            cout<<"\t";*/
+            
             group->getGroupMember(i)->Accept(this);
         } 
     }

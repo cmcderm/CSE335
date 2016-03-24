@@ -72,7 +72,7 @@ public:
         m_hire=hireY;
     }
     virtual void DisplayEmployee()const{
-        cout << m_FirstName << " " << m_LastName << "; " << m_salary 
+        cout <<"\t\t" <<m_FirstName << " " << m_LastName << "; " << m_salary 
                 << "; " << m_hire << "; " << m_ID << endl;
     }
     

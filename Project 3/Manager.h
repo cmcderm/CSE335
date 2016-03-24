@@ -66,8 +66,8 @@ public:
     virtual void addEmployee(Employee* emp){group.push_back(emp);}
     
     virtual void DisplayEmployee()const{
-        cout << m_FirstName << " " << m_LastName << ": " << m_salary 
-                << "; " << m_hire << "; "<< m_rank << endl;
+        cout << "\t"<<m_FirstName << " " << m_LastName << ": " << m_salary 
+                << "; " << m_hire << "; "<<m_ID<<"; "<< m_rank << endl;
     }
 };
 
