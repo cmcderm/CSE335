@@ -54,6 +54,7 @@
     <property name="title">
      <string>First Qt</string>
     </property>
+    <addaction name="actionNew_Window"/>
    </widget>
    <addaction name="menuFirst_Qt"/>
   </widget>
@@ -66,6 +67,11 @@
    </attribute>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
+  <action name="actionNew_Window">
+   <property name="text">
+    <string>New Window</string>
+   </property>
+  </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources/>
