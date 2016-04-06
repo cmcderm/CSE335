@@ -6,19 +6,6 @@
     </data>
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/C:/Users/Connor/Dropbox/MSU/CSE%20335/CSE335/CompositeVisitorLecture/EvaluationVisitor.h</file>
-            <file>file:/C:/Users/Connor/Dropbox/MSU/CSE%20335/CSE335/CompositeVisitorLecture/Multiply.h</file>
-            <file>file:/C:/Users/Connor/Dropbox/MSU/CSE%20335/CSE335/CompositeVisitorLecture/Subtract.h</file>
-            <file>file:/C:/Users/Connor/Dropbox/MSU/CSE%20335/CSE335/CompositeVisitorLecture/Divide.h</file>
-            <file>file:/C:/Users/Connor/Dropbox/MSU/CSE%20335/CSE335/CompositeVisitorLecture/Add.h</file>
-            <file>file:/C:/Users/Connor/Dropbox/MSU/CSE%20335/CSE335/CompositeVisitorLecture/PrintVisitor.h</file>
-            <file>file:/C:/Users/Connor/Dropbox/MSU/CSE%20335/CSE335/CompositeVisitorLecture/Literal.h</file>
-            <file>file:/C:/Users/Connor/Dropbox/MSU/CSE%20335/CSE335/CompositeVisitorLecture/BinaryExpr.h</file>
-            <file>file:/C:/Users/Connor/Dropbox/MSU/CSE%20335/CSE335/CompositeVisitorLecture/Expr.h</file>
-            <file>file:/C:/Users/Connor/Dropbox/MSU/CSE%20335/CSE335/CompositeVisitorLecture/main.cpp</file>
-            <file>file:/C:/Users/Connor/Dropbox/MSU/CSE%20335/CSE335/CompositeVisitorLecture/ExprVisitor.h</file>
-            <file>file:/C:/Users/Connor/Dropbox/MSU/CSE%20335/CSE335/CompositeVisitorLecture/Negate.h</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>
