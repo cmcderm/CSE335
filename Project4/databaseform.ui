@@ -40,15 +40,33 @@
      <string>Add Record</string>
     </property>
    </widget>
-   <widget class="QTableView" name="tableView">
+   <widget class="QTableWidget" name="tableWidget">
     <property name="geometry">
      <rect>
       <x>110</x>
-      <y>100</y>
-      <width>721</width>
+      <y>70</y>
+      <width>491</width>
       <height>192</height>
      </rect>
     </property>
+    <property name="columnCount">
+     <number>7</number>
+    </property>
+    <column>
+     <property name="text">
+      <string>First Name</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Last Name</string>
+     </property>
+    </column>
+    <column/>
+    <column/>
+    <column/>
+    <column/>
+    <column/>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">

@@ -6,6 +6,7 @@ DatabaseForm::DatabaseForm(QWidget *parent) :
     ui(new Ui::DatabaseForm)
 {
     ui->setupUi(this);
+    ui->tableView->col
 }
 
 DatabaseForm::~DatabaseForm()
