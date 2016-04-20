@@ -3,12 +3,18 @@
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
-    ui(new Ui::MainWindow)
-{
-    ui->setupUi(this);
-}
+    ui(new Ui::MainWindow){
+        ui->setupUi(this);
+        ui->pushButton->setText("Close");
+    }
 
 MainWindow::~MainWindow()
 {
     delete ui;
+}
+
+
+void MainWindow::on_pushButton_clicked()
+{
+    //won't let me delete this
 }
