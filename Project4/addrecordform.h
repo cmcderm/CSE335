@@ -13,8 +13,7 @@ class addRecordForm : public QDialog
 
 public:
     explicit addRecordForm(QWidget *parent = 0);
-    ~addRecordForm();asdasdasda
-    //stuffasdasdasdasd
+    ~addRecordForm();
 
 private:
     Ui::addRecordForm *ui;

@@ -13,8 +13,11 @@ class DatabaseForm : public QMainWindow
 
 public:
     explicit DatabaseForm(QWidget *parent = 0);
-    ~DatabaseForm();asdfadsfadsfadsfadsfadsfadsfadsfadsfads
+    ~DatabaseForm();
     //stuuf
+
+private slots:
+    void on_addRButton_clicked();
 
 private:
     Ui::DatabaseForm *ui;
