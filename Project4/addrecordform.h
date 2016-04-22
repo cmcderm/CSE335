@@ -2,6 +2,8 @@
 #define ADDRECORDFORM_H
 
 #include <QDialog>
+#include <QString>
+#include <QStandardItemModel>
 
 namespace Ui {
 class addRecordForm;
@@ -14,6 +16,20 @@ class addRecordForm : public QDialog
 public:
     explicit addRecordForm(QWidget *parent = 0);
     ~addRecordForm();
+public slots:
+    void on_pushButtonAdd_clicked();
+    void addFName();
+    void on_pushButtonCancel_clicked();
+    //QString retStr();
+
+signals:
+    void observerDeleted();
+    //void on_Send();
+    /*
+    void addLName(QString);
+    void addSalary(float);
+    void addHYear(int);
+*/
 
 private:
     Ui::addRecordForm *ui;
