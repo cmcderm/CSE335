@@ -6,32 +6,19 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>560</width>
-    <height>330</height>
+    <width>588</width>
+    <height>344</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>DatabaseForm</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QPushButton" name="okButton">
-    <property name="geometry">
-     <rect>
-      <x>390</x>
-      <y>230</y>
-      <width>113</width>
-      <height>32</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>OK</string>
-    </property>
-   </widget>
    <widget class="QPushButton" name="addRButton">
     <property name="geometry">
      <rect>
       <x>40</x>
-      <y>230</y>
+      <y>240</y>
       <width>113</width>
       <height>32</height>
      </rect>
@@ -40,11 +27,24 @@
      <string>Add Record</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="okButton">
+    <property name="geometry">
+     <rect>
+      <x>420</x>
+      <y>240</y>
+      <width>113</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>OK</string>
+    </property>
+   </widget>
    <widget class="QTableWidget" name="tableWidget">
     <property name="geometry">
      <rect>
-      <x>30</x>
-      <y>20</y>
+      <x>40</x>
+      <y>30</y>
       <width>491</width>
       <height>192</height>
      </rect>
@@ -89,17 +89,17 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>560</width>
-     <height>21</height>
+     <width>588</width>
+     <height>22</height>
     </rect>
    </property>
-   <widget class="QMenu" name="menuFile">
+   <widget class="QMenu" name="menuFIle">
     <property name="title">
-     <string>File</string>
+     <string>FIle</string>
     </property>
     <addaction name="actionSave"/>
    </widget>
-   <addaction name="menuFile"/>
+   <addaction name="menuFIle"/>
   </widget>
   <widget class="QToolBar" name="mainToolBar">
    <attribute name="toolBarArea">
