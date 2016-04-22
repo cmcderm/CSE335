@@ -16,7 +16,7 @@ public:
     ~DatabaseForm();
     //stuuf
 
-private slots:
+public slots:
     void on_addRButton_clicked();
 
 private:
