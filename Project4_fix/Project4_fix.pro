@@ -1,6 +1,6 @@
 #-------------------------------------------------
 #
-# Project created by QtCreator 2016-04-21T19:59:52
+# Project created by QtCreator 2016-04-23T14:42:11
 #
 #-------------------------------------------------
 
@@ -8,16 +8,15 @@ QT       += core gui
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-TARGET = Project4_fix
+TARGET = Project4_Fix
 TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        databaseform.cpp \
-    addrecordform.cpp
+        mainwindow.cpp \
+    employee.cpp
 
-HEADERS  += databaseform.h \
-    addrecordform.h
+HEADERS  += mainwindow.h \
+    employee.h
 
-FORMS    += databaseform.ui \
-    addrecordform.ui
+FORMS    += mainwindow.ui
