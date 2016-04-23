@@ -5,6 +5,8 @@
 #include <QString>
 #include <QStandardItemModel>
 
+#include "employee.h"
+
 namespace Ui {
 class addRecordForm;
 }
@@ -24,6 +26,7 @@ public slots:
 
 signals:
     void observerDeleted();
+    void addEmployee(Employee*);
     //void on_Send();
     /*
     void addLName(QString);

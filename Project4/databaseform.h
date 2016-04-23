@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include "addrecordform.h"
+#include "employee.h"
 #include <vector>
 
 namespace Ui {
@@ -20,7 +21,8 @@ public:
 
 public slots:
     void on_addRButton_clicked();
-     void accept_f_name();
+    void accept_f_name();
+    void receiveEmployee(Employee*);
 //signals:
   //  void newRow();
 
@@ -31,6 +33,7 @@ public slots:
 private:
     Ui::DatabaseForm *ui;
     std::vector<addRecordForm*> listen;
+    std::vector<Employee*> employees;
     unsigned int rowNumber;
 };
 
