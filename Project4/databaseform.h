@@ -1,50 +1,26 @@
-#include "databaseform.h"
-#include "ui_databaseform.h"
-#include "addrecordform.h"
-#include <QStandardItem>
-#include <QTableView>
-#include <QTableWidgetItem>
-#include <QTableWidget>
-#include <iostream>
+#ifndef DATABASEFORM_H
+#define DATABASEFORM_H
 
+#include <QMainWindow>
 
-DatabaseForm::DatabaseForm(QWidget *parent) :
-    QMainWindow(parent),
-    ui(new Ui::DatabaseForm)
+namespace Ui {
+class DatabaseForm;
+}
+
+class DatabaseForm : public QMainWindow
 {
-    ui->setupUi(this);
-    rowNumber=0;
-    ui->tableWidget->setSortingEnabled(true);
+    Q_OBJECT
 
+public:
+    explicit DatabaseForm(QWidget *parent = 0);
+    ~DatabaseForm();
+    //stuuf
 
-}
+public slots:
+    void on_addRButton_clicked();
 
-DatabaseForm::~DatabaseForm()
-{
-    //connect(ui->tableWidget->insertRow();
-    delete ui;
-}
+private:
+    Ui::DatabaseForm *ui;
+};
 
-void DatabaseForm::on_addRButton_clicked()
-{
-
-    rowNumber++;
-    addRecordForm* arf = new addRecordForm();
-    arf->show();
-    ui->tableWidget->setRowCount(rowNumber);
-    //connect(arf,SIGNAL(retStr()),ui->tableWidget,SLOT(insertRow(int)));
-    connect(ui->tableWidget,SIGNAL(itemChanged(QTableWidgetItem*)),arf,SLOT(on_pushButtonAdd_clicked()));
-    //connect(arf,SIGNAL(observerDeleted()),ui->tableWidget,SLOT(insertRow(int)));
-     //ui->tableView->setModel(model);
-}
-
-
-void DatabaseForm::accept_f_name(){
-    QTableWidgetItem *first =new QTableWidgetItem(QString("fnam"));
-    ui->tableWidget->setRowCount(rowNumber);
-    ui->tableWidget->setItem(rowNumber,0,first);
-    std::cout<<"gere2"<<std::endl;
-
-    //ui->tableWidget->setCurrentCell(1,1);
-
-}
+#endif // DATABASEFORM_H
