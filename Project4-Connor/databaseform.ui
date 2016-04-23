@@ -6,32 +6,19 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>588</width>
-    <height>344</height>
+    <width>560</width>
+    <height>330</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>DatabaseForm</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QPushButton" name="addRButton">
-    <property name="geometry">
-     <rect>
-      <x>40</x>
-      <y>240</y>
-      <width>113</width>
-      <height>32</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Add Record</string>
-    </property>
-   </widget>
    <widget class="QPushButton" name="okButton">
     <property name="geometry">
      <rect>
-      <x>420</x>
-      <y>240</y>
+      <x>390</x>
+      <y>230</y>
       <width>113</width>
       <height>32</height>
      </rect>
@@ -40,11 +27,24 @@
      <string>OK</string>
     </property>
    </widget>
-   <widget class="QTableWidget" name="tableWidget">
+   <widget class="QPushButton" name="addRButton">
     <property name="geometry">
      <rect>
       <x>40</x>
-      <y>30</y>
+      <y>230</y>
+      <width>113</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Add Record</string>
+    </property>
+   </widget>
+   <widget class="QTableWidget" name="tableWidget">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>20</y>
       <width>491</width>
       <height>192</height>
      </rect>
@@ -89,17 +89,17 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>588</width>
-     <height>22</height>
+     <width>560</width>
+     <height>21</height>
     </rect>
    </property>
-   <widget class="QMenu" name="menuFIle">
+   <widget class="QMenu" name="menuFile">
     <property name="title">
-     <string>FIle</string>
+     <string>File</string>
     </property>
     <addaction name="actionSave"/>
    </widget>
-   <addaction name="menuFIle"/>
+   <addaction name="menuFile"/>
   </widget>
   <widget class="QToolBar" name="mainToolBar">
    <attribute name="toolBarArea">
