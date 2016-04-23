@@ -43,15 +43,19 @@
    <widget class="QTableWidget" name="tableWidget">
     <property name="geometry">
      <rect>
-      <x>40</x>
+      <x>80</x>
       <y>30</y>
-      <width>491</width>
-      <height>192</height>
+      <width>91</width>
+      <height>61</height>
      </rect>
     </property>
-    <property name="columnCount">
-     <number>10</number>
+    <property name="rowCount">
+     <number>1</number>
     </property>
+    <property name="columnCount">
+     <number>4</number>
+    </property>
+    <row/>
     <column>
      <property name="text">
       <string>First Name</string>
@@ -72,16 +76,16 @@
       <string>Hiring Year</string>
      </property>
     </column>
-    <column>
-     <property name="text">
-      <string/>
-     </property>
-    </column>
-    <column/>
-    <column/>
-    <column/>
-    <column/>
-    <column/>
+   </widget>
+   <widget class="QTableView" name="tableView">
+    <property name="geometry">
+     <rect>
+      <x>180</x>
+      <y>20</y>
+      <width>256</width>
+      <height>192</height>
+     </rect>
+    </property>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">

@@ -49,10 +49,16 @@ OBJECTS_DIR   = ./
 ####### Files
 
 SOURCES       = ../Project4/main.cpp \
-		../Project4/databaseform.cpp moc_databaseform.cpp
+		../Project4/databaseform.cpp \
+		../Project4/addrecordform.cpp \
+		../Project4/employee.cpp moc_databaseform.cpp \
+		moc_addrecordform.cpp
 OBJECTS       = main.o \
 		databaseform.o \
-		moc_databaseform.o
+		addrecordform.o \
+		employee.o \
+		moc_databaseform.o \
+		moc_addrecordform.o
 DIST          = ../../../Qt/5.5/clang_64/mkspecs/features/spec_pre.prf \
 		../../../Qt/5.5/clang_64/mkspecs/qdevice.pri \
 		../../../Qt/5.5/clang_64/mkspecs/features/device_config.prf \
@@ -174,6 +180,7 @@ DIST          = ../../../Qt/5.5/clang_64/mkspecs/features/spec_pre.prf \
 		../../../Qt/5.5/clang_64/mkspecs/features/qt_config.prf \
 		../../../Qt/5.5/clang_64/mkspecs/macx-clang/qmake.conf \
 		../../../Qt/5.5/clang_64/mkspecs/features/spec_post.prf \
+		../Project4/.qmake.stash \
 		../../../Qt/5.5/clang_64/mkspecs/features/exclusive_builds.prf \
 		../../../Qt/5.5/clang_64/mkspecs/features/default_pre.prf \
 		../../../Qt/5.5/clang_64/mkspecs/features/mac/default_pre.prf \
@@ -195,8 +202,12 @@ DIST          = ../../../Qt/5.5/clang_64/mkspecs/features/spec_pre.prf \
 		../../../Qt/5.5/clang_64/mkspecs/features/exceptions.prf \
 		../../../Qt/5.5/clang_64/mkspecs/features/yacc.prf \
 		../../../Qt/5.5/clang_64/mkspecs/features/lex.prf \
-		../Project4/Project4.pro ../Project4/databaseform.h ../Project4/main.cpp \
-		../Project4/databaseform.cpp
+		../Project4/Project4.pro ../Project4/databaseform.h \
+		../Project4/addrecordform.h \
+		employee.h ../Project4/main.cpp \
+		../Project4/databaseform.cpp \
+		../Project4/addrecordform.cpp \
+		../Project4/employee.cpp
 QMAKE_TARGET  = Project4
 DESTDIR       = #avoid trailing-slash linebreak
 TARGET        = Project4.app/Contents/MacOS/Project4
@@ -234,7 +245,7 @@ first: all
 
 ####### Build rules
 
-$(TARGET): ui_databaseform.h $(OBJECTS)  
+$(TARGET): ui_databaseform.h ui_addrecordform.h $(OBJECTS)  
 	@test -d Project4.app/Contents/MacOS/ || mkdir -p Project4.app/Contents/MacOS/
 	$(LINK) $(LFLAGS) -o $(TARGET) $(OBJECTS) $(OBJCOMP) $(LIBS)
 
@@ -359,6 +370,7 @@ Makefile: ../Project4/Project4.pro ../../../Qt/5.5/clang_64/mkspecs/macx-clang/q
 		../../../Qt/5.5/clang_64/mkspecs/features/qt_config.prf \
 		../../../Qt/5.5/clang_64/mkspecs/macx-clang/qmake.conf \
 		../../../Qt/5.5/clang_64/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		../../../Qt/5.5/clang_64/mkspecs/features/exclusive_builds.prf \
 		../../../Qt/5.5/clang_64/mkspecs/features/default_pre.prf \
 		../../../Qt/5.5/clang_64/mkspecs/features/mac/default_pre.prf \
@@ -506,6 +518,7 @@ Makefile: ../Project4/Project4.pro ../../../Qt/5.5/clang_64/mkspecs/macx-clang/q
 ../../../Qt/5.5/clang_64/mkspecs/features/qt_config.prf:
 ../../../Qt/5.5/clang_64/mkspecs/macx-clang/qmake.conf:
 ../../../Qt/5.5/clang_64/mkspecs/features/spec_post.prf:
+.qmake.stash:
 ../../../Qt/5.5/clang_64/mkspecs/features/exclusive_builds.prf:
 ../../../Qt/5.5/clang_64/mkspecs/features/default_pre.prf:
 ../../../Qt/5.5/clang_64/mkspecs/features/mac/default_pre.prf:
@@ -560,9 +573,9 @@ dist: distdir FORCE
 distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
-	$(COPY_FILE) --parents ../Project4/databaseform.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../Project4/main.cpp ../Project4/databaseform.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../Project4/databaseform.ui $(DISTDIR)/
+	$(COPY_FILE) --parents ../Project4/databaseform.h ../Project4/addrecordform.h employee.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../Project4/main.cpp ../Project4/databaseform.cpp ../Project4/addrecordform.cpp ../Project4/employee.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../Project4/databaseform.ui ../Project4/addrecordform.ui $(DISTDIR)/
 
 
 clean: compiler_clean 
@@ -588,21 +601,29 @@ compiler_objective_c_make_all:
 compiler_objective_c_clean:
 compiler_rcc_make_all:
 compiler_rcc_clean:
-compiler_moc_header_make_all: moc_databaseform.cpp
+compiler_moc_header_make_all: moc_databaseform.cpp moc_addrecordform.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) moc_databaseform.cpp
+	-$(DEL_FILE) moc_databaseform.cpp moc_addrecordform.cpp
 moc_databaseform.cpp: ../../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/QMainWindow \
 		../../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/qmainwindow.h \
 		../Project4/databaseform.h
 	/Users/MacBookPro/Qt/5.5/clang_64/bin/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -I/Users/MacBookPro/Qt/5.5/clang_64/mkspecs/macx-clang -I/Users/MacBookPro/GitHub/CSE335/Project4 -I/Users/MacBookPro/Qt/5.5/clang_64/lib/QtWidgets.framework/Headers -I/Users/MacBookPro/Qt/5.5/clang_64/lib/QtGui.framework/Headers -I/Users/MacBookPro/Qt/5.5/clang_64/lib/QtCore.framework/Headers -I. -F/Users/MacBookPro/Qt/5.5/clang_64/lib ../Project4/databaseform.h -o moc_databaseform.cpp
 
+moc_addrecordform.cpp: ../../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/QDialog \
+		../../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/qdialog.h \
+		../Project4/addrecordform.h
+	/Users/MacBookPro/Qt/5.5/clang_64/bin/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -I/Users/MacBookPro/Qt/5.5/clang_64/mkspecs/macx-clang -I/Users/MacBookPro/GitHub/CSE335/Project4 -I/Users/MacBookPro/Qt/5.5/clang_64/lib/QtWidgets.framework/Headers -I/Users/MacBookPro/Qt/5.5/clang_64/lib/QtGui.framework/Headers -I/Users/MacBookPro/Qt/5.5/clang_64/lib/QtCore.framework/Headers -I. -F/Users/MacBookPro/Qt/5.5/clang_64/lib ../Project4/addrecordform.h -o moc_addrecordform.cpp
+
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
-compiler_uic_make_all: ui_databaseform.h
+compiler_uic_make_all: ui_databaseform.h ui_addrecordform.h
 compiler_uic_clean:
-	-$(DEL_FILE) ui_databaseform.h
+	-$(DEL_FILE) ui_databaseform.h ui_addrecordform.h
 ui_databaseform.h: ../Project4/databaseform.ui
 	/Users/MacBookPro/Qt/5.5/clang_64/bin/uic ../Project4/databaseform.ui -o ui_databaseform.h
+
+ui_addrecordform.h: ../Project4/addrecordform.ui
+	/Users/MacBookPro/Qt/5.5/clang_64/bin/uic ../Project4/addrecordform.ui -o ui_addrecordform.h
 
 compiler_rez_source_make_all:
 compiler_rez_source_clean:
@@ -626,11 +647,26 @@ main.o: ../Project4/main.cpp ../Project4/databaseform.h \
 databaseform.o: ../Project4/databaseform.cpp ../Project4/databaseform.h \
 		../../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/QMainWindow \
 		../../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/qmainwindow.h \
-		ui_databaseform.h
+		ui_databaseform.h \
+		../Project4/addrecordform.h \
+		../../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/QDialog \
+		../../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/qdialog.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o databaseform.o ../Project4/databaseform.cpp
+
+addrecordform.o: ../Project4/addrecordform.cpp ../Project4/addrecordform.h \
+		../../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/QDialog \
+		../../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/qdialog.h \
+		ui_addrecordform.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o addrecordform.o ../Project4/addrecordform.cpp
+
+employee.o: ../Project4/employee.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o employee.o ../Project4/employee.cpp
 
 moc_databaseform.o: moc_databaseform.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_databaseform.o moc_databaseform.cpp
+
+moc_addrecordform.o: moc_addrecordform.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_addrecordform.o moc_addrecordform.cpp
 
 ####### Install
 
