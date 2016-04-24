@@ -15,12 +15,14 @@ TEMPLATE = app
 SOURCES += main.cpp\
         databaseform.cpp \
     addrecordform.cpp \
-    employee.cpp
+    employee.cpp \
+    connortablewidget.cpp
 
 HEADERS  += databaseform.h \
     addrecordform.h \
     employee.h \
-    employee.h
+    employee.h \
+    connortablewidget.h
 
 FORMS    += databaseform.ui \
     addrecordform.ui

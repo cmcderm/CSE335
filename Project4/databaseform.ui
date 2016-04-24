@@ -40,7 +40,7 @@
      <string>Add Record</string>
     </property>
    </widget>
-   <widget class="QTableWidget" name="tableWidget">
+   <widget class="ConnorTableWidget" name="tableWidget">
     <property name="geometry">
      <rect>
       <x>30</x>
@@ -50,7 +50,7 @@
      </rect>
     </property>
     <property name="columnCount">
-     <number>10</number>
+     <number>4</number>
     </property>
     <attribute name="horizontalHeaderVisible">
      <bool>true</bool>
@@ -75,19 +75,9 @@
     </column>
     <column>
      <property name="text">
-      <string>Hiring Year</string>
+      <string>Hire Year</string>
      </property>
     </column>
-    <column>
-     <property name="text">
-      <string/>
-     </property>
-    </column>
-    <column/>
-    <column/>
-    <column/>
-    <column/>
-    <column/>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
@@ -123,6 +113,13 @@
   </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>ConnorTableWidget</class>
+   <extends>QTableWidget</extends>
+   <header>connortablewidget.h</header>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>

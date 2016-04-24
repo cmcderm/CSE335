@@ -24,15 +24,9 @@ public slots:
     void on_addRButton_clicked();
     void receiveEmployee(Employee*);
 
-
 private slots:
     void on_okButton_clicked();
-
-    void on_tableWidget_clicked(const QModelIndex &index);
-
-    void on_tableWidget_itemClicked(QTableWidgetItem *item);
-
-    void on_tableWidget_itemActivated(QTableWidgetItem *item);
+    void sortEmployees(int column, Qt::SortOrder order);
 
 private:
     void save();
