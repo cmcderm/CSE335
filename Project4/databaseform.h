@@ -23,14 +23,13 @@ public slots:
     void on_addRButton_clicked();
     void accept_f_name();
     void receiveEmployee(Employee*);
-//signals:
-  //  void newRow();
 
-    /*void accept_l_name();
-    void accept_salary();
-    void accept_hyr();*/
+
+private slots:
+    void on_okButton_clicked();
 
 private:
+    void save();
     Ui::DatabaseForm *ui;
     std::vector<addRecordForm*> listen;
     std::vector<Employee*> employees;

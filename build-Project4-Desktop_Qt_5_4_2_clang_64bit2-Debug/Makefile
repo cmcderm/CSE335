@@ -51,11 +51,13 @@ OBJECTS_DIR   = ./
 SOURCES       = ../Project4/main.cpp \
 		../Project4/databaseform.cpp \
 		../Project4/addrecordform.cpp \
-		../Project4/employee.cpp moc_addrecordform.cpp
+		../Project4/employee.cpp moc_databaseform.cpp \
+		moc_addrecordform.cpp
 OBJECTS       = main.o \
 		databaseform.o \
 		addrecordform.o \
 		employee.o \
+		moc_databaseform.o \
 		moc_addrecordform.o
 DIST          = ../../../Qt/5.4/clang_64/mkspecs/features/spec_pre.prf \
 		../../../Qt/5.4/clang_64/mkspecs/qdevice.pri \
@@ -187,7 +189,8 @@ DIST          = ../../../Qt/5.4/clang_64/mkspecs/features/spec_pre.prf \
 		../../../Qt/5.4/clang_64/mkspecs/features/lex.prf \
 		../Project4/Project4.pro ../Project4/databaseform.h \
 		../Project4/addrecordform.h \
-		employee.h ../Project4/main.cpp \
+		../Project4/employee.h \
+		../Project4/employee.h ../Project4/main.cpp \
 		../Project4/databaseform.cpp \
 		../Project4/addrecordform.cpp \
 		../Project4/employee.cpp
@@ -526,7 +529,7 @@ dist: distdir FORCE
 distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
-	$(COPY_FILE) --parents ../Project4/databaseform.h ../Project4/addrecordform.h employee.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../Project4/databaseform.h ../Project4/addrecordform.h ../Project4/employee.h ../Project4/employee.h $(DISTDIR)/
 	$(COPY_FILE) --parents ../Project4/main.cpp ../Project4/databaseform.cpp ../Project4/addrecordform.cpp ../Project4/employee.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../Project4/databaseform.ui ../Project4/addrecordform.ui $(DISTDIR)/
 
@@ -554,15 +557,31 @@ compiler_objective_c_make_all:
 compiler_objective_c_clean:
 compiler_rcc_make_all:
 compiler_rcc_clean:
-compiler_moc_header_make_all: moc_addrecordform.cpp
+compiler_moc_header_make_all: moc_databaseform.cpp moc_addrecordform.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) moc_addrecordform.cpp
+	-$(DEL_FILE) moc_databaseform.cpp moc_addrecordform.cpp
+moc_databaseform.cpp: ../../../Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QMainWindow \
+		../../../Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qmainwindow.h \
+		../Project4/addrecordform.h \
+		../../../Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QDialog \
+		../../../Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qdialog.h \
+		../../../Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/QString \
+		../../../Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/qstring.h \
+		../../../Qt/5.4/clang_64/lib/QtGui.framework/Versions/5/Headers/QStandardItemModel \
+		../../../Qt/5.4/clang_64/lib/QtGui.framework/Versions/5/Headers/qstandarditemmodel.h \
+		../Project4/employee.h \
+		../../../Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/Qstring \
+		../Project4/databaseform.h
+	/Users/MacBookPro/Qt/5.4/clang_64/bin/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -I/Users/MacBookPro/Qt/5.4/clang_64/mkspecs/macx-clang -I/Users/MacBookPro/GitHub/CSE335/Project4 -I/Users/MacBookPro/Qt/5.4/clang_64/lib/QtWidgets.framework/Headers -I/Users/MacBookPro/Qt/5.4/clang_64/lib/QtGui.framework/Headers -I/Users/MacBookPro/Qt/5.4/clang_64/lib/QtCore.framework/Headers -I. -F/Users/MacBookPro/Qt/5.4/clang_64/lib ../Project4/databaseform.h -o moc_databaseform.cpp
+
 moc_addrecordform.cpp: ../../../Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QDialog \
 		../../../Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qdialog.h \
 		../../../Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/QString \
 		../../../Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/qstring.h \
 		../../../Qt/5.4/clang_64/lib/QtGui.framework/Versions/5/Headers/QStandardItemModel \
 		../../../Qt/5.4/clang_64/lib/QtGui.framework/Versions/5/Headers/qstandarditemmodel.h \
+		../Project4/employee.h \
+		../../../Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/Qstring \
 		../Project4/addrecordform.h
 	/Users/MacBookPro/Qt/5.4/clang_64/bin/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -I/Users/MacBookPro/Qt/5.4/clang_64/mkspecs/macx-clang -I/Users/MacBookPro/GitHub/CSE335/Project4 -I/Users/MacBookPro/Qt/5.4/clang_64/lib/QtWidgets.framework/Headers -I/Users/MacBookPro/Qt/5.4/clang_64/lib/QtGui.framework/Headers -I/Users/MacBookPro/Qt/5.4/clang_64/lib/QtCore.framework/Headers -I. -F/Users/MacBookPro/Qt/5.4/clang_64/lib ../Project4/addrecordform.h -o moc_addrecordform.cpp
 
@@ -590,7 +609,8 @@ compiler_clean: compiler_moc_header_clean compiler_uic_clean
 ####### Compile
 
 main.o: ../Project4/main.cpp ../Project4/databaseform.h \
-		ui_databaseform.h \
+		../../../Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QMainWindow \
+		../../../Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qmainwindow.h \
 		../Project4/addrecordform.h \
 		../../../Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QDialog \
 		../../../Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qdialog.h \
@@ -598,31 +618,35 @@ main.o: ../Project4/main.cpp ../Project4/databaseform.h \
 		../../../Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/qstring.h \
 		../../../Qt/5.4/clang_64/lib/QtGui.framework/Versions/5/Headers/QStandardItemModel \
 		../../../Qt/5.4/clang_64/lib/QtGui.framework/Versions/5/Headers/qstandarditemmodel.h \
+		../Project4/employee.h \
+		../../../Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/Qstring \
+		../../../Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QApplication \
+		../../../Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qapplication.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../Project4/main.cpp
+
+databaseform.o: ../Project4/databaseform.cpp ../Project4/databaseform.h \
+		../../../Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QMainWindow \
+		../../../Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qmainwindow.h \
+		../Project4/addrecordform.h \
+		../../../Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QDialog \
+		../../../Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qdialog.h \
+		../../../Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/QString \
+		../../../Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/qstring.h \
+		../../../Qt/5.4/clang_64/lib/QtGui.framework/Versions/5/Headers/QStandardItemModel \
+		../../../Qt/5.4/clang_64/lib/QtGui.framework/Versions/5/Headers/qstandarditemmodel.h \
+		../Project4/employee.h \
+		../../../Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/Qstring \
+		ui_databaseform.h \
 		../../../Qt/5.4/clang_64/lib/QtGui.framework/Versions/5/Headers/QStandardItem \
 		../../../Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QTableView \
 		../../../Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qtableview.h \
 		../../../Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QTableWidgetItem \
 		../../../Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qtablewidget.h \
 		../../../Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QTableWidget \
-		../../../Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QApplication \
-		../../../Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qapplication.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../Project4/main.cpp
-
-databaseform.o: ../Project4/databaseform.cpp ../Project4/databaseform.h \
-		ui_databaseform.h \
-		../Project4/addrecordform.h \
-		../../../Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QDialog \
-		../../../Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qdialog.h \
-		../../../Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/QString \
-		../../../Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/qstring.h \
-		../../../Qt/5.4/clang_64/lib/QtGui.framework/Versions/5/Headers/QStandardItemModel \
-		../../../Qt/5.4/clang_64/lib/QtGui.framework/Versions/5/Headers/qstandarditemmodel.h \
-		../../../Qt/5.4/clang_64/lib/QtGui.framework/Versions/5/Headers/QStandardItem \
-		../../../Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QTableView \
-		../../../Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qtableview.h \
-		../../../Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QTableWidgetItem \
-		../../../Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qtablewidget.h \
-		../../../Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QTableWidget
+		../../../Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/QFile \
+		../../../Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/qfile.h \
+		../../../Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/QTextStream \
+		../../../Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/qtextstream.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o databaseform.o ../Project4/databaseform.cpp
 
 addrecordform.o: ../Project4/addrecordform.cpp ../Project4/addrecordform.h \
@@ -632,19 +656,21 @@ addrecordform.o: ../Project4/addrecordform.cpp ../Project4/addrecordform.h \
 		../../../Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/qstring.h \
 		../../../Qt/5.4/clang_64/lib/QtGui.framework/Versions/5/Headers/QStandardItemModel \
 		../../../Qt/5.4/clang_64/lib/QtGui.framework/Versions/5/Headers/qstandarditemmodel.h \
+		../Project4/employee.h \
+		../../../Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/Qstring \
 		ui_addrecordform.h \
 		../Project4/databaseform.h \
-		ui_databaseform.h \
-		../../../Qt/5.4/clang_64/lib/QtGui.framework/Versions/5/Headers/QStandardItem \
-		../../../Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QTableView \
-		../../../Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qtableview.h \
-		../../../Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QTableWidgetItem \
-		../../../Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qtablewidget.h \
-		../../../Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QTableWidget
+		../../../Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QMainWindow \
+		../../../Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qmainwindow.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o addrecordform.o ../Project4/addrecordform.cpp
 
-employee.o: ../Project4/employee.cpp 
+employee.o: ../Project4/employee.cpp ../Project4/employee.h \
+		../../../Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/Qstring \
+		../../../Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/qstring.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o employee.o ../Project4/employee.cpp
+
+moc_databaseform.o: moc_databaseform.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_databaseform.o moc_databaseform.cpp
 
 moc_addrecordform.o: moc_addrecordform.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_addrecordform.o moc_addrecordform.cpp
