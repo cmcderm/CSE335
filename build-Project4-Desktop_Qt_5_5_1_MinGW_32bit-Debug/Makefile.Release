@@ -57,6 +57,7 @@ OBJECTS       = release/main.o \
 
 DIST          =  ../Project4/databaseform.h \
 		../Project4/addrecordform.h \
+		../Project4/employee.h \
 		../Project4/employee.h ../Project4/main.cpp \
 		../Project4/databaseform.cpp \
 		../Project4/addrecordform.cpp \
@@ -223,6 +224,15 @@ release/moc_databaseform.cpp: C:/Qt/5.5/mingw492_32/include/QtWidgets/QMainWindo
 		C:/Qt/5.5/mingw492_32/include/QtGui/qtouchdevice.h \
 		C:/Qt/5.5/mingw492_32/include/QtWidgets/qtabwidget.h \
 		C:/Qt/5.5/mingw492_32/include/QtGui/qicon.h \
+		../Project4/addrecordform.h \
+		C:/Qt/5.5/mingw492_32/include/QtWidgets/QDialog \
+		C:/Qt/5.5/mingw492_32/include/QtWidgets/qdialog.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/QString \
+		C:/Qt/5.5/mingw492_32/include/QtGui/QStandardItemModel \
+		C:/Qt/5.5/mingw492_32/include/QtGui/qstandarditemmodel.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qabstractitemmodel.h \
+		../Project4/employee.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/Qstring \
 		../Project4/databaseform.h
 	'C:\Qt\5.5\mingw492_32\bin\moc.exe' $(DEFINES) -D__GNUC__ -DWIN32 -IC:/Qt/5.5/mingw492_32/mkspecs/win32-g++ -I'C:/Users/Connor/Dropbox/MSU/CSE 335/CSE335/Project4' -IC:/Qt/5.5/mingw492_32/include -IC:/Qt/5.5/mingw492_32/include/QtWidgets -IC:/Qt/5.5/mingw492_32/include/QtGui -IC:/Qt/5.5/mingw492_32/include/QtANGLE -IC:/Qt/5.5/mingw492_32/include/QtCore -I. ../Project4/databaseform.h -o release/moc_databaseform.cpp
 
@@ -329,6 +339,13 @@ release/moc_addrecordform.cpp: C:/Qt/5.5/mingw492_32/include/QtWidgets/QDialog \
 		C:/Qt/5.5/mingw492_32/include/QtCore/qfiledevice.h \
 		C:/Qt/5.5/mingw492_32/include/QtGui/qvector2d.h \
 		C:/Qt/5.5/mingw492_32/include/QtGui/qtouchdevice.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/QString \
+		C:/Qt/5.5/mingw492_32/include/QtGui/QStandardItemModel \
+		C:/Qt/5.5/mingw492_32/include/QtGui/qstandarditemmodel.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qabstractitemmodel.h \
+		C:/Qt/5.5/mingw492_32/include/QtGui/qicon.h \
+		../Project4/employee.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/Qstring \
 		../Project4/addrecordform.h
 	'C:\Qt\5.5\mingw492_32\bin\moc.exe' $(DEFINES) -D__GNUC__ -DWIN32 -IC:/Qt/5.5/mingw492_32/mkspecs/win32-g++ -I'C:/Users/Connor/Dropbox/MSU/CSE 335/CSE335/Project4' -IC:/Qt/5.5/mingw492_32/include -IC:/Qt/5.5/mingw492_32/include/QtWidgets -IC:/Qt/5.5/mingw492_32/include/QtGui -IC:/Qt/5.5/mingw492_32/include/QtANGLE -IC:/Qt/5.5/mingw492_32/include/QtCore -I. ../Project4/addrecordform.h -o release/moc_addrecordform.cpp
 
@@ -461,6 +478,15 @@ release/main.o: ../Project4/main.cpp ../Project4/databaseform.h \
 		C:/Qt/5.5/mingw492_32/include/QtGui/qtouchdevice.h \
 		C:/Qt/5.5/mingw492_32/include/QtWidgets/qtabwidget.h \
 		C:/Qt/5.5/mingw492_32/include/QtGui/qicon.h \
+		../Project4/addrecordform.h \
+		C:/Qt/5.5/mingw492_32/include/QtWidgets/QDialog \
+		C:/Qt/5.5/mingw492_32/include/QtWidgets/qdialog.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/QString \
+		C:/Qt/5.5/mingw492_32/include/QtGui/QStandardItemModel \
+		C:/Qt/5.5/mingw492_32/include/QtGui/qstandarditemmodel.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qabstractitemmodel.h \
+		../Project4/employee.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/Qstring \
 		C:/Qt/5.5/mingw492_32/include/QtWidgets/QApplication \
 		C:/Qt/5.5/mingw492_32/include/QtWidgets/qapplication.h \
 		C:/Qt/5.5/mingw492_32/include/QtCore/qcoreapplication.h \
@@ -576,6 +602,15 @@ release/databaseform.o: ../Project4/databaseform.cpp ../Project4/databaseform.h 
 		C:/Qt/5.5/mingw492_32/include/QtGui/qtouchdevice.h \
 		C:/Qt/5.5/mingw492_32/include/QtWidgets/qtabwidget.h \
 		C:/Qt/5.5/mingw492_32/include/QtGui/qicon.h \
+		../Project4/addrecordform.h \
+		C:/Qt/5.5/mingw492_32/include/QtWidgets/QDialog \
+		C:/Qt/5.5/mingw492_32/include/QtWidgets/qdialog.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/QString \
+		C:/Qt/5.5/mingw492_32/include/QtGui/QStandardItemModel \
+		C:/Qt/5.5/mingw492_32/include/QtGui/qstandarditemmodel.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qabstractitemmodel.h \
+		../Project4/employee.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/Qstring \
 		ui_databaseform.h \
 		C:/Qt/5.5/mingw492_32/include/QtCore/QVariant \
 		C:/Qt/5.5/mingw492_32/include/QtWidgets/QAction \
@@ -595,7 +630,6 @@ release/databaseform.o: ../Project4/databaseform.cpp ../Project4/databaseform.h 
 		C:/Qt/5.5/mingw492_32/include/QtWidgets/qabstractitemview.h \
 		C:/Qt/5.5/mingw492_32/include/QtWidgets/qabstractscrollarea.h \
 		C:/Qt/5.5/mingw492_32/include/QtWidgets/qframe.h \
-		C:/Qt/5.5/mingw492_32/include/QtCore/qabstractitemmodel.h \
 		C:/Qt/5.5/mingw492_32/include/QtCore/qitemselectionmodel.h \
 		C:/Qt/5.5/mingw492_32/include/QtWidgets/qabstractitemdelegate.h \
 		C:/Qt/5.5/mingw492_32/include/QtWidgets/qstyleoption.h \
@@ -622,9 +656,11 @@ release/databaseform.o: ../Project4/databaseform.cpp ../Project4/databaseform.h 
 		C:/Qt/5.5/mingw492_32/include/QtWidgets/QToolBar \
 		C:/Qt/5.5/mingw492_32/include/QtWidgets/qtoolbar.h \
 		C:/Qt/5.5/mingw492_32/include/QtWidgets/QWidget \
-		../Project4/addrecordform.h \
-		C:/Qt/5.5/mingw492_32/include/QtWidgets/QDialog \
-		C:/Qt/5.5/mingw492_32/include/QtWidgets/qdialog.h
+		C:/Qt/5.5/mingw492_32/include/QtGui/QStandardItem \
+		C:/Qt/5.5/mingw492_32/include/QtWidgets/QTableView \
+		C:/Qt/5.5/mingw492_32/include/QtWidgets/QTableWidgetItem \
+		C:/Qt/5.5/mingw492_32/include/QtCore/QFile \
+		C:/Qt/5.5/mingw492_32/include/QtCore/QTextStream
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release/databaseform.o ../Project4/databaseform.cpp
 
 release/addrecordform.o: ../Project4/addrecordform.cpp ../Project4/addrecordform.h \
@@ -731,11 +767,17 @@ release/addrecordform.o: ../Project4/addrecordform.cpp ../Project4/addrecordform
 		C:/Qt/5.5/mingw492_32/include/QtCore/qfiledevice.h \
 		C:/Qt/5.5/mingw492_32/include/QtGui/qvector2d.h \
 		C:/Qt/5.5/mingw492_32/include/QtGui/qtouchdevice.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/QString \
+		C:/Qt/5.5/mingw492_32/include/QtGui/QStandardItemModel \
+		C:/Qt/5.5/mingw492_32/include/QtGui/qstandarditemmodel.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qabstractitemmodel.h \
+		C:/Qt/5.5/mingw492_32/include/QtGui/qicon.h \
+		../Project4/employee.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/Qstring \
 		ui_addrecordform.h \
 		C:/Qt/5.5/mingw492_32/include/QtCore/QVariant \
 		C:/Qt/5.5/mingw492_32/include/QtWidgets/QAction \
 		C:/Qt/5.5/mingw492_32/include/QtWidgets/qaction.h \
-		C:/Qt/5.5/mingw492_32/include/QtGui/qicon.h \
 		C:/Qt/5.5/mingw492_32/include/QtWidgets/qactiongroup.h \
 		C:/Qt/5.5/mingw492_32/include/QtWidgets/QApplication \
 		C:/Qt/5.5/mingw492_32/include/QtWidgets/qapplication.h \
@@ -746,14 +788,11 @@ release/addrecordform.o: ../Project4/addrecordform.cpp ../Project4/addrecordform
 		C:/Qt/5.5/mingw492_32/include/QtGui/qinputmethod.h \
 		C:/Qt/5.5/mingw492_32/include/QtWidgets/QButtonGroup \
 		C:/Qt/5.5/mingw492_32/include/QtWidgets/qbuttongroup.h \
-		C:/Qt/5.5/mingw492_32/include/QtWidgets/QDialogButtonBox \
-		C:/Qt/5.5/mingw492_32/include/QtWidgets/qdialogbuttonbox.h \
 		C:/Qt/5.5/mingw492_32/include/QtWidgets/QHeaderView \
 		C:/Qt/5.5/mingw492_32/include/QtWidgets/qheaderview.h \
 		C:/Qt/5.5/mingw492_32/include/QtWidgets/qabstractitemview.h \
 		C:/Qt/5.5/mingw492_32/include/QtWidgets/qabstractscrollarea.h \
 		C:/Qt/5.5/mingw492_32/include/QtWidgets/qframe.h \
-		C:/Qt/5.5/mingw492_32/include/QtCore/qabstractitemmodel.h \
 		C:/Qt/5.5/mingw492_32/include/QtCore/qitemselectionmodel.h \
 		C:/Qt/5.5/mingw492_32/include/QtWidgets/qabstractitemdelegate.h \
 		C:/Qt/5.5/mingw492_32/include/QtWidgets/qstyleoption.h \
@@ -773,10 +812,52 @@ release/addrecordform.o: ../Project4/addrecordform.cpp ../Project4/addrecordform
 		C:/Qt/5.5/mingw492_32/include/QtGui/qtextcursor.h \
 		C:/Qt/5.5/mingw492_32/include/QtGui/qtextformat.h \
 		C:/Qt/5.5/mingw492_32/include/QtGui/qpen.h \
-		C:/Qt/5.5/mingw492_32/include/QtGui/qtextoption.h
+		C:/Qt/5.5/mingw492_32/include/QtGui/qtextoption.h \
+		C:/Qt/5.5/mingw492_32/include/QtWidgets/QPushButton \
+		C:/Qt/5.5/mingw492_32/include/QtWidgets/qpushbutton.h \
+		C:/Qt/5.5/mingw492_32/include/QtWidgets/qabstractbutton.h \
+		../Project4/databaseform.h \
+		C:/Qt/5.5/mingw492_32/include/QtWidgets/QMainWindow \
+		C:/Qt/5.5/mingw492_32/include/QtWidgets/qmainwindow.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release/addrecordform.o ../Project4/addrecordform.cpp
 
-release/employee.o: ../Project4/employee.cpp ../Project4/employee.h
+release/employee.o: ../Project4/employee.cpp ../Project4/employee.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/Qstring \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qstring.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qchar.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qglobal.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qconfig.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qfeatures.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qsystemdetection.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qprocessordetection.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qcompilerdetection.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qtypeinfo.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qtypetraits.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qsysinfo.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qlogging.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qflags.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qatomic.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qbasicatomic.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qatomic_bootstrap.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qgenericatomic.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qatomic_cxx11.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qatomic_gcc.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qatomic_msvc.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qatomic_armv7.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qatomic_armv6.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qatomic_armv5.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qatomic_ia64.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qatomic_mips.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qatomic_x86.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qatomic_unix.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qglobalstatic.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qmutex.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qnumeric.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qbytearray.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qrefcount.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qnamespace.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qarraydata.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qstringbuilder.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release/employee.o ../Project4/employee.cpp
 
 release/moc_databaseform.o: release/moc_databaseform.cpp 

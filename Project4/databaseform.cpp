@@ -5,10 +5,10 @@
 #include <QTableView>
 #include <QTableWidgetItem>
 #include <QTableWidget>
-///
+
 #include <iostream>
 #include <fstream>
-///
+
 #include <string>
 #include <QFile>
 #include <QTextStream>
@@ -24,12 +24,7 @@ DatabaseForm::DatabaseForm(QWidget *parent) :
     ui->setupUi(this);
     rowNumber=0;
 
-    ui->tableWidget->setSortingEnabled(true);
-   //if(ui->actionSave){
-     //   this->save();
-    //}
-   // ui->actionSave;
-
+    //ui->tableWidget->setSortingEnabled(true);
 }
 
 DatabaseForm::~DatabaseForm()
@@ -68,49 +63,44 @@ void DatabaseForm::receiveEmployee(Employee* emp){
 }
 
 
-void DatabaseForm::accept_f_name(){
-    QTableWidgetItem *first =new QTableWidgetItem(QString("fnam"));
-    ui->tableWidget->setRowCount(rowNumber);
-    ui->tableWidget->setItem(rowNumber,0,first);
-
-
-}
-
-
 void DatabaseForm::save(){
-    //std::fstream cvs,tab;
     int rows = ui->tableWidget->rowCount();
     Employee* emp;
-    QString fname,lname,muny,hyr;
+    std::string fname,lname,muny,hyr;
     QString cvstxt= "cvs.txt";//,tabtxt="tabEmployees.txt";
-    QFile file(cvstxt);
-    file.open(QIODevice::WriteOnly|QIODevice::Text);
-    std::cout<<"YO I AM HERE";
-    QTextStream out(&file);
-    //cvs.open("cvsEmployees.txt");
-    //tab.open("tabEmployees.txt");
-    hyr="FirstName,LastName,Salary,HireYear\n";
-    out<<hyr<<endl;
-    //tab<<"FirstName \tLastName \tSalary \tHireYear\n";
-    for(unsigned int i =0; i<rows; i++){
-          emp= employees[i];
-          fname=emp->getFirstName();
-          lname=emp->getLastName();
-          muny=emp->getSalary();
-          hyr=emp->getHireYear();
-          out<<fname<<","<<lname<<","<<muny<<","<<hyr<<"\n";
-          //out<<line;
+
+    std::ofstream ofs;
+    ofs.open("../Project4/cvs.txt");
+    if(ofs.is_open()){
+        ofs<<"FirstName,LastName,Salary,HireYear\n";
+        ofs.flush();
+        for(int i =0; i<rows; i++){
+              emp= employees[i];
+              fname =emp->getFirstName().toStdString().c_str();
+              lname=emp->getLastName().toStdString().c_str();
+              muny=emp->getSalary().toStdString().c_str();
+              hyr=emp->getHireYear().toStdString().c_str();
+              ofs<<fname<<","<<lname<<","<<muny<<","<<hyr<<std::endl;
+        }
+        ofs.close();
     }
-    file.close();
-
-    //tab.close();
-
 }
 
-
-
-
-void DatabaseForm::on_okButton_clicked()
-{
+void DatabaseForm::on_okButton_clicked(){
     save();
+}
+
+void DatabaseForm::on_tableWidget_clicked(const QModelIndex &index)
+{
+    std::cout << index.model()->data(index).toString().toStdString() << std::endl;
+}
+
+void DatabaseForm::on_tableWidget_itemClicked(QTableWidgetItem *item)
+{
+    std::cout << "Clicked" << std::endl;
+}
+
+void DatabaseForm::on_tableWidget_itemActivated(QTableWidgetItem *item)
+{
+    std::cout << "Activated" << std::endl;
 }

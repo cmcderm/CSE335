@@ -20,7 +20,6 @@ public:
     ~addRecordForm();
 public slots:
     void on_pushButtonAdd_clicked();
-    void addFName();
     void on_pushButtonCancel_clicked();
     //QString retStr();
 

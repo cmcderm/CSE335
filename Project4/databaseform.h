@@ -5,6 +5,7 @@
 #include "addrecordform.h"
 #include "employee.h"
 #include <vector>
+#include <QTableWidgetItem>
 
 namespace Ui {
 class DatabaseForm;
@@ -21,12 +22,17 @@ public:
 
 public slots:
     void on_addRButton_clicked();
-    void accept_f_name();
     void receiveEmployee(Employee*);
 
 
 private slots:
     void on_okButton_clicked();
+
+    void on_tableWidget_clicked(const QModelIndex &index);
+
+    void on_tableWidget_itemClicked(QTableWidgetItem *item);
+
+    void on_tableWidget_itemActivated(QTableWidgetItem *item);
 
 private:
     void save();

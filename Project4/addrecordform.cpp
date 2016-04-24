@@ -9,7 +9,6 @@ addRecordForm::addRecordForm(QWidget *parent) :
     ui(new Ui::addRecordForm)
 {
     ui->setupUi(this);
-
 }
 
 addRecordForm::~addRecordForm()
@@ -29,25 +28,16 @@ void addRecordForm::on_pushButtonAdd_clicked(){
     } else {
         std::cout << "Employee form improperly entered. Check the data entered." << std::endl;
     }
-
-
 }
 
 
 void addRecordForm::on_pushButtonCancel_clicked(){
-     connect(ui->pushButtonCancel,SIGNAL(pressed()),this,SLOT(close()));
-
-
+    close();
 }
 
 /*QString addRecordForm::retStr(){
     QString fname= ui->lineEditFirst->text();
     return fname;
 }*/
-
-void addRecordForm::addFName(){
-    ui->lineEditFirst;
-   // connect(ui->lineEditFirst,SIGNAL(addFName),ui->)
-}
 
 

@@ -52,6 +52,12 @@
     <property name="columnCount">
      <number>10</number>
     </property>
+    <attribute name="horizontalHeaderVisible">
+     <bool>true</bool>
+    </attribute>
+    <attribute name="horizontalHeaderCascadingSectionResizes">
+     <bool>false</bool>
+    </attribute>
     <column>
      <property name="text">
       <string>First Name</string>
@@ -90,7 +96,7 @@
      <x>0</x>
      <y>0</y>
      <width>560</width>
-     <height>22</height>
+     <height>21</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
