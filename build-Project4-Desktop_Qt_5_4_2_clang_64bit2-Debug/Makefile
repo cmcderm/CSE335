@@ -51,12 +51,18 @@ OBJECTS_DIR   = ./
 SOURCES       = ../Project4/main.cpp \
 		../Project4/databaseform.cpp \
 		../Project4/addrecordform.cpp \
-		../Project4/employee.cpp moc_databaseform.cpp \
+		../Project4/employee.cpp \
+		../Project4/bubblesort.cpp \
+		../Project4/empdatabase.cpp \
+		../Project4/sortablevector.cpp moc_databaseform.cpp \
 		moc_addrecordform.cpp
 OBJECTS       = main.o \
 		databaseform.o \
 		addrecordform.o \
 		employee.o \
+		bubblesort.o \
+		empdatabase.o \
+		sortablevector.o \
 		moc_databaseform.o \
 		moc_addrecordform.o
 DIST          = ../../../Qt/5.4/clang_64/mkspecs/features/spec_pre.prf \
@@ -166,6 +172,7 @@ DIST          = ../../../Qt/5.4/clang_64/mkspecs/features/spec_pre.prf \
 		../../../Qt/5.4/clang_64/mkspecs/features/qt_config.prf \
 		../../../Qt/5.4/clang_64/mkspecs/macx-clang/qmake.conf \
 		../../../Qt/5.4/clang_64/mkspecs/features/spec_post.prf \
+		../Project4/.qmake.stash \
 		../../../Qt/5.4/clang_64/mkspecs/features/exclusive_builds.prf \
 		../../../Qt/5.4/clang_64/mkspecs/features/default_pre.prf \
 		../../../Qt/5.4/clang_64/mkspecs/features/mac/default_pre.prf \
@@ -190,10 +197,16 @@ DIST          = ../../../Qt/5.4/clang_64/mkspecs/features/spec_pre.prf \
 		../Project4/Project4.pro ../Project4/databaseform.h \
 		../Project4/addrecordform.h \
 		../Project4/employee.h \
-		../Project4/employee.h ../Project4/main.cpp \
+		../Project4/employee.h \
+		../Project4/bubblesort.h \
+		../Project4/empdatabase.h \
+		../Project4/sortablevector.h ../Project4/main.cpp \
 		../Project4/databaseform.cpp \
 		../Project4/addrecordform.cpp \
-		../Project4/employee.cpp
+		../Project4/employee.cpp \
+		../Project4/bubblesort.cpp \
+		../Project4/empdatabase.cpp \
+		../Project4/sortablevector.cpp
 QMAKE_TARGET  = Project4
 DESTDIR       = #avoid trailing-slash linebreak
 TARGET        = Project4.app/Contents/MacOS/Project4
@@ -342,6 +355,7 @@ Makefile: ../Project4/Project4.pro ../../../Qt/5.4/clang_64/mkspecs/macx-clang/q
 		../../../Qt/5.4/clang_64/mkspecs/features/qt_config.prf \
 		../../../Qt/5.4/clang_64/mkspecs/macx-clang/qmake.conf \
 		../../../Qt/5.4/clang_64/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		../../../Qt/5.4/clang_64/mkspecs/features/exclusive_builds.prf \
 		../../../Qt/5.4/clang_64/mkspecs/features/default_pre.prf \
 		../../../Qt/5.4/clang_64/mkspecs/features/mac/default_pre.prf \
@@ -475,6 +489,7 @@ Makefile: ../Project4/Project4.pro ../../../Qt/5.4/clang_64/mkspecs/macx-clang/q
 ../../../Qt/5.4/clang_64/mkspecs/features/qt_config.prf:
 ../../../Qt/5.4/clang_64/mkspecs/macx-clang/qmake.conf:
 ../../../Qt/5.4/clang_64/mkspecs/features/spec_post.prf:
+.qmake.stash:
 ../../../Qt/5.4/clang_64/mkspecs/features/exclusive_builds.prf:
 ../../../Qt/5.4/clang_64/mkspecs/features/default_pre.prf:
 ../../../Qt/5.4/clang_64/mkspecs/features/mac/default_pre.prf:
@@ -529,8 +544,8 @@ dist: distdir FORCE
 distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
-	$(COPY_FILE) --parents ../Project4/databaseform.h ../Project4/addrecordform.h ../Project4/employee.h ../Project4/employee.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../Project4/main.cpp ../Project4/databaseform.cpp ../Project4/addrecordform.cpp ../Project4/employee.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../Project4/databaseform.h ../Project4/addrecordform.h ../Project4/employee.h ../Project4/employee.h ../Project4/bubblesort.h ../Project4/empdatabase.h ../Project4/sortablevector.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../Project4/main.cpp ../Project4/databaseform.cpp ../Project4/addrecordform.cpp ../Project4/employee.cpp ../Project4/bubblesort.cpp ../Project4/empdatabase.cpp ../Project4/sortablevector.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../Project4/databaseform.ui ../Project4/addrecordform.ui $(DISTDIR)/
 
 
@@ -571,6 +586,12 @@ moc_databaseform.cpp: ../../../Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/
 		../../../Qt/5.4/clang_64/lib/QtGui.framework/Versions/5/Headers/qstandarditemmodel.h \
 		../Project4/employee.h \
 		../../../Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/Qstring \
+		../../../Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QTableWidgetItem \
+		../../../Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qtablewidget.h \
+		../Project4/bubblesort.h \
+		../Project4/empdatabase.h \
+		../Project4/databaseform.h \
+		../Project4/sortablevector.h \
 		../Project4/databaseform.h
 	/Users/MacBookPro/Qt/5.4/clang_64/bin/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -I/Users/MacBookPro/Qt/5.4/clang_64/mkspecs/macx-clang -I/Users/MacBookPro/GitHub/CSE335/Project4 -I/Users/MacBookPro/Qt/5.4/clang_64/lib/QtWidgets.framework/Headers -I/Users/MacBookPro/Qt/5.4/clang_64/lib/QtGui.framework/Headers -I/Users/MacBookPro/Qt/5.4/clang_64/lib/QtCore.framework/Headers -I. -F/Users/MacBookPro/Qt/5.4/clang_64/lib ../Project4/databaseform.h -o moc_databaseform.cpp
 
@@ -620,6 +641,11 @@ main.o: ../Project4/main.cpp ../Project4/databaseform.h \
 		../../../Qt/5.4/clang_64/lib/QtGui.framework/Versions/5/Headers/qstandarditemmodel.h \
 		../Project4/employee.h \
 		../../../Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/Qstring \
+		../../../Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QTableWidgetItem \
+		../../../Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qtablewidget.h \
+		../Project4/bubblesort.h \
+		../Project4/empdatabase.h \
+		../Project4/sortablevector.h \
 		../../../Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QApplication \
 		../../../Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qapplication.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../Project4/main.cpp
@@ -636,12 +662,15 @@ databaseform.o: ../Project4/databaseform.cpp ../Project4/databaseform.h \
 		../../../Qt/5.4/clang_64/lib/QtGui.framework/Versions/5/Headers/qstandarditemmodel.h \
 		../Project4/employee.h \
 		../../../Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/Qstring \
+		../../../Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QTableWidgetItem \
+		../../../Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qtablewidget.h \
+		../Project4/bubblesort.h \
+		../Project4/empdatabase.h \
+		../Project4/sortablevector.h \
 		ui_databaseform.h \
 		../../../Qt/5.4/clang_64/lib/QtGui.framework/Versions/5/Headers/QStandardItem \
 		../../../Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QTableView \
 		../../../Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qtableview.h \
-		../../../Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QTableWidgetItem \
-		../../../Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qtablewidget.h \
 		../../../Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QTableWidget \
 		../../../Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/QFile \
 		../../../Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/qfile.h \
@@ -661,13 +690,59 @@ addrecordform.o: ../Project4/addrecordform.cpp ../Project4/addrecordform.h \
 		ui_addrecordform.h \
 		../Project4/databaseform.h \
 		../../../Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QMainWindow \
-		../../../Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qmainwindow.h
+		../../../Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qmainwindow.h \
+		../../../Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QTableWidgetItem \
+		../../../Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qtablewidget.h \
+		../Project4/bubblesort.h \
+		../Project4/empdatabase.h \
+		../Project4/sortablevector.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o addrecordform.o ../Project4/addrecordform.cpp
 
 employee.o: ../Project4/employee.cpp ../Project4/employee.h \
 		../../../Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/Qstring \
 		../../../Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/qstring.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o employee.o ../Project4/employee.cpp
+
+bubblesort.o: ../Project4/bubblesort.cpp ../Project4/bubblesort.h \
+		../Project4/employee.h \
+		../../../Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/Qstring \
+		../../../Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/qstring.h \
+		../Project4/empdatabase.h \
+		../Project4/databaseform.h \
+		../../../Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QMainWindow \
+		../../../Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qmainwindow.h \
+		../Project4/addrecordform.h \
+		../../../Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QDialog \
+		../../../Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qdialog.h \
+		../../../Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/QString \
+		../../../Qt/5.4/clang_64/lib/QtGui.framework/Versions/5/Headers/QStandardItemModel \
+		../../../Qt/5.4/clang_64/lib/QtGui.framework/Versions/5/Headers/qstandarditemmodel.h \
+		../../../Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QTableWidgetItem \
+		../../../Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qtablewidget.h \
+		../Project4/sortablevector.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o bubblesort.o ../Project4/bubblesort.cpp
+
+empdatabase.o: ../Project4/empdatabase.cpp ../Project4/empdatabase.h \
+		../Project4/employee.h \
+		../../../Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/Qstring \
+		../../../Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/qstring.h \
+		../Project4/databaseform.h \
+		../../../Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QMainWindow \
+		../../../Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qmainwindow.h \
+		../Project4/addrecordform.h \
+		../../../Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QDialog \
+		../../../Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qdialog.h \
+		../../../Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/QString \
+		../../../Qt/5.4/clang_64/lib/QtGui.framework/Versions/5/Headers/QStandardItemModel \
+		../../../Qt/5.4/clang_64/lib/QtGui.framework/Versions/5/Headers/qstandarditemmodel.h \
+		../../../Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QTableWidgetItem \
+		../../../Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qtablewidget.h \
+		../Project4/bubblesort.h \
+		../Project4/sortablevector.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o empdatabase.o ../Project4/empdatabase.cpp
+
+sortablevector.o: ../Project4/sortablevector.cpp ../Project4/sortablevector.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o sortablevector.o ../Project4/sortablevector.cpp
 
 moc_databaseform.o: moc_databaseform.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_databaseform.o moc_databaseform.cpp

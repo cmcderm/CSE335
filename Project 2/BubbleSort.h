@@ -19,11 +19,9 @@ public:
         int n = empDatabase->getSize();
         while(!sorted){
             sorted = true;
-            //cout<<"for"<<n<<endl;
+            
             for(int i = 1; i < n; i++){
-               // cout<<"mah"<<n<<sorted<<endl;
                 if(compare(empDatabase, i, i-1)){
-                   // cout<<"boi"<<endl;
                     empDatabase->swap(i-1, i);
                     sorted = false;
                 }

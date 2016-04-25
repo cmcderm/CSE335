@@ -15,12 +15,18 @@ TEMPLATE = app
 SOURCES += main.cpp\
         databaseform.cpp \
     addrecordform.cpp \
-    employee.cpp
+    employee.cpp \
+    bubblesort.cpp \
+    empdatabase.cpp \
+    sortablevector.cpp
 
 HEADERS  += databaseform.h \
     addrecordform.h \
     employee.h \
-    employee.h
+    employee.h \
+    bubblesort.h \
+    empdatabase.h \
+    sortablevector.h
 
 FORMS    += databaseform.ui \
     addrecordform.ui

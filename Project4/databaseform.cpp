@@ -1,6 +1,7 @@
 #include "databaseform.h"
 #include "ui_databaseform.h"
 #include "addrecordform.h"
+
 #include <QStandardItem>
 #include <QTableView>
 #include <QTableWidgetItem>
@@ -23,13 +24,13 @@ DatabaseForm::DatabaseForm(QWidget *parent) :
 {
     ui->setupUi(this);
     rowNumber=0;
-
+    connect(ui->tableWidget->horizontalHeader(), SIGNAL(sectionClicked(int)),this,SLOT(sortingEmp(int)));
     //ui->tableWidget->setSortingEnabled(true);
 }
 
 DatabaseForm::~DatabaseForm()
 {
-    //connect(ui->tableWidget->insertRow();
+
     delete ui;
 }
 
@@ -40,11 +41,7 @@ void DatabaseForm::on_addRButton_clicked()
 
     listen.push_back(arf);
     connect(arf, SIGNAL(addEmployee(Employee*)), this, SLOT(receiveEmployee(Employee*)));
-    //connect(arf,SIGNAL(retStr()),ui->tableWidget,SLOT(insertRow(int)));
-    //connect(ui->tableWidget,SIGNAL(itemChanged(QTableWidgetItem*)),arf,SLOT(on_pushButtonAdd_clicked()));
-    //connect(arf,SIGNAL(observerDeleted()),ui->tableWidget,SLOT(insertRow(int)));
 
-     //ui->tableView->setModel(model);
 }
 
 
@@ -88,19 +85,32 @@ void DatabaseForm::save(){
 
 void DatabaseForm::on_okButton_clicked(){
     save();
+    std::cout<<"OK"<<std::endl;
 }
 
-void DatabaseForm::on_tableWidget_clicked(const QModelIndex &index)
-{
-    std::cout << index.model()->data(index).toString().toStdString() << std::endl;
+
+void DatabaseForm::sortingEmp(int clm){
+    if(clm==0){
+
+    }
+
+
+
+
+
 }
 
-void DatabaseForm::on_tableWidget_itemClicked(QTableWidgetItem *item)
-{
-    std::cout << "Clicked" << std::endl;
-}
 
-void DatabaseForm::on_tableWidget_itemActivated(QTableWidgetItem *item)
-{
-    std::cout << "Activated" << std::endl;
-}
+
+
+
+
+
+
+
+
+
+
+
+
+

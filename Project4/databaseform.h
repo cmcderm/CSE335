@@ -6,6 +6,7 @@
 #include "employee.h"
 #include <vector>
 #include <QTableWidgetItem>
+#include <bubblesort.h>
 
 namespace Ui {
 class DatabaseForm;
@@ -18,6 +19,8 @@ class DatabaseForm : public QMainWindow
 public:
     explicit DatabaseForm(QWidget *parent = 0);
     ~DatabaseForm();
+    std::vector<Employee*> employees;
+
     //stuuf
 
 public slots:
@@ -27,18 +30,19 @@ public slots:
 
 private slots:
     void on_okButton_clicked();
+    void sort();
+    void sortingEmp(int);
 
-    void on_tableWidget_clicked(const QModelIndex &index);
+    void empCompare(Employee*, int , int );
 
-    void on_tableWidget_itemClicked(QTableWidgetItem *item);
-
-    void on_tableWidget_itemActivated(QTableWidgetItem *item);
+//protected:
+  //  std::vector<Employee*> employees;
 
 private:
     void save();
     Ui::DatabaseForm *ui;
     std::vector<addRecordForm*> listen;
-    std::vector<Employee*> employees;
+    //std::vector<Employee*> employees;
     unsigned int rowNumber;
 };
 
