@@ -27,9 +27,9 @@ public slots:
     void on_addRButton_clicked();
     void receiveEmployee(Employee*);
 
-
 private slots:
     void on_okButton_clicked();
+<<<<<<< HEAD
     void sort();
     void sortingEmp(int);
 
@@ -37,6 +37,9 @@ private slots:
 
 //protected:
   //  std::vector<Employee*> employees;
+=======
+    void sortEmployees(int column, Qt::SortOrder order);
+>>>>>>> origin/master
 
 private:
     void save();

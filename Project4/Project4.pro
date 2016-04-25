@@ -16,17 +16,25 @@ SOURCES += main.cpp\
         databaseform.cpp \
     addrecordform.cpp \
     employee.cpp \
+<<<<<<< HEAD
     bubblesort.cpp \
     empdatabase.cpp \
     sortablevector.cpp
+=======
+    connortablewidget.cpp
+>>>>>>> origin/master
 
 HEADERS  += databaseform.h \
     addrecordform.h \
     employee.h \
     employee.h \
+<<<<<<< HEAD
     bubblesort.h \
     empdatabase.h \
     sortablevector.h
+=======
+    connortablewidget.h
+>>>>>>> origin/master
 
 FORMS    += databaseform.ui \
     addrecordform.ui

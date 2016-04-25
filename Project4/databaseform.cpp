@@ -24,8 +24,13 @@ DatabaseForm::DatabaseForm(QWidget *parent) :
 {
     ui->setupUi(this);
     rowNumber=0;
+<<<<<<< HEAD
     connect(ui->tableWidget->horizontalHeader(), SIGNAL(sectionClicked(int)),this,SLOT(sortingEmp(int)));
     //ui->tableWidget->setSortingEnabled(true);
+=======
+
+    ui->tableWidget->setSortingEnabled(true);
+>>>>>>> origin/master
 }
 
 DatabaseForm::~DatabaseForm()
@@ -41,6 +46,13 @@ void DatabaseForm::on_addRButton_clicked()
 
     listen.push_back(arf);
     connect(arf, SIGNAL(addEmployee(Employee*)), this, SLOT(receiveEmployee(Employee*)));
+<<<<<<< HEAD
+=======
+    connect(ui->tableWidget, SIGNAL(sort(int,Qt::SortOrder)), this, SLOT(sortEmployees(int, Qt::SortOrder)));
+    //connect(arf,SIGNAL(retStr()),ui->tableWidget,SLOT(insertRow(int)));
+    //connect(ui->tableWidget,SIGNAL(itemChanged(QTableWidgetItem*)),arf,SLOT(on_pushButtonAdd_clicked()));
+    //connect(arf,SIGNAL(observerDeleted()),ui->tableWidget,SLOT(insertRow(int)));
+>>>>>>> origin/master
 
 }
 
@@ -88,6 +100,7 @@ void DatabaseForm::on_okButton_clicked(){
     std::cout<<"OK"<<std::endl;
 }
 
+<<<<<<< HEAD
 
 void DatabaseForm::sortingEmp(int clm){
     if(clm==0){
@@ -98,6 +111,10 @@ void DatabaseForm::sortingEmp(int clm){
 
 
 
+=======
+void DatabaseForm::sortEmployees(int column, Qt::SortOrder order){
+    std::cout << column << std::endl;
+>>>>>>> origin/master
 }
 
 
