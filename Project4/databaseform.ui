@@ -40,7 +40,7 @@
      <string>Add Record</string>
     </property>
    </widget>
-   <widget class="ConnorTableWidget" name="tableWidget">
+   <widget class="QTableWidget" name="tableWidget">
     <property name="geometry">
      <rect>
       <x>50</x>
@@ -86,7 +86,7 @@
      <x>0</x>
      <y>0</y>
      <width>560</width>
-     <height>22</height>
+     <height>21</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
@@ -113,13 +113,6 @@
   </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <customwidgets>
-  <customwidget>
-   <class>ConnorTableWidget</class>
-   <extends>QTableWidget</extends>
-   <header>connortablewidget.h</header>
-  </customwidget>
- </customwidgets>
  <resources/>
  <connections/>
 </ui>

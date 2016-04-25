@@ -24,13 +24,15 @@ DatabaseForm::DatabaseForm(QWidget *parent) :
 {
     ui->setupUi(this);
     rowNumber=0;
-<<<<<<< HEAD
     connect(ui->tableWidget->horizontalHeader(), SIGNAL(sectionClicked(int)),this,SLOT(sortingEmp(int)));
     //ui->tableWidget->setSortingEnabled(true);
-=======
+
+    sortedFirst = false;
+    sortedLast = false;
+    sortedSalary = false;
+    sortedHireYear = false;
 
     ui->tableWidget->setSortingEnabled(true);
->>>>>>> origin/master
 }
 
 DatabaseForm::~DatabaseForm()
@@ -46,14 +48,10 @@ void DatabaseForm::on_addRButton_clicked()
 
     listen.push_back(arf);
     connect(arf, SIGNAL(addEmployee(Employee*)), this, SLOT(receiveEmployee(Employee*)));
-<<<<<<< HEAD
-=======
-    connect(ui->tableWidget, SIGNAL(sort(int,Qt::SortOrder)), this, SLOT(sortEmployees(int, Qt::SortOrder)));
+    //connect(ui->tableWidget, SIGNAL(sort(int,Qt::SortOrder)), this, SLOT(sortEmployees(int, Qt::SortOrder)));
     //connect(arf,SIGNAL(retStr()),ui->tableWidget,SLOT(insertRow(int)));
     //connect(ui->tableWidget,SIGNAL(itemChanged(QTableWidgetItem*)),arf,SLOT(on_pushButtonAdd_clicked()));
     //connect(arf,SIGNAL(observerDeleted()),ui->tableWidget,SLOT(insertRow(int)));
->>>>>>> origin/master
-
 }
 
 
@@ -100,21 +98,55 @@ void DatabaseForm::on_okButton_clicked(){
     std::cout<<"OK"<<std::endl;
 }
 
-<<<<<<< HEAD
-
 void DatabaseForm::sortingEmp(int clm){
     if(clm==0){
-
+        if(sortedFirst){
+            std::cout << "First Name Reverse" << std::endl;
+            sortedFirst = false;
+        } else {
+            std::cout << "First Name" << std::endl;
+            sortedFirst = true;
+            sortedLast = false;
+            sortedSalary = false;
+            sortedHireYear = false;
+        }
+    } else if(clm == 1){
+        if(sortedLast){
+            std::cout << "Last Name Reverse" << std::endl;
+            sortedLast = false;
+        } else {
+            std::cout << "Last Name" << std::endl;
+            sortedFirst = false;
+            sortedLast = true;
+            sortedSalary = false;
+            sortedHireYear = false;
+        }
+    } else if(clm == 2){
+        if(sortedSalary){
+            std::cout << "Salary Reverse" << std::endl;
+            sortedSalary = false;
+        } else {
+            std::cout << "Salary" << std::endl;
+            sortedFirst = false;
+            sortedLast = false;
+            sortedSalary = true;
+            sortedHireYear = false;
+        }
+    } else if(clm == 3){
+        if(sortedHireYear){
+            std::cout << "Hire Year Reverse" << std::endl;
+            sortedHireYear = false;
+        } else {
+            sortedFirst = false;
+            sortedLast = false;
+            sortedSalary = false;
+            sortedHireYear = true;
+        }
     }
+}
 
-
-
-
-
-=======
 void DatabaseForm::sortEmployees(int column, Qt::SortOrder order){
     std::cout << column << std::endl;
->>>>>>> origin/master
 }
 
 

@@ -2,6 +2,8 @@
 #include "employee.h"
 #include "empdatabase.h"
 
+#include <iostream>
+
 BubbleSort::BubbleSort()
 {
    bool compare(empDataBase* empVector, int i, int j);
@@ -29,54 +31,54 @@ void BubbleSort::Sort(empDataBase* empVector)
 
 class BubbleSortFN : public BubbleSort{
 protected:
-        virtual bool compare(empDataBase* empVector, int i, int j) const {
-            return !empVector->compareFN(i, j);
-        }
+    virtual bool compare(empDataBase* empVector, int i, int j) const {
+        return !empVector->compareFN(i, j);
+    }
 
-    };
+};
 
 class BubbleSortFNReverse : public BubbleSort{
 protected:
-        virtual bool compare(empDataBase* empVector, int i, int j) const {
-            return empVector->compareFN(i, j);
-        }
-    };
+    virtual bool compare(empDataBase* empVector, int i, int j) const {
+        return empVector->compareFN(i, j);
+    }
+};
 
 class BubbleSortLN : public BubbleSort{
 protected:
-        virtual bool compare(empDataBase* empVector, int i, int j) const {
-            return !empVector->compareLN(i, j);
-        }
-    };
+    virtual bool compare(empDataBase* empVector, int i, int j) const {
+        return !empVector->compareLN(i, j);
+    }
+};
 class BubbleSortLNReverse : public BubbleSort{
 protected:
-        virtual bool compare(empDataBase* empVector, int i, int j) const {
-            return empVector->compareLN(i, j);
-        }
-    };
+    virtual bool compare(empDataBase* empVector, int i, int j) const {
+        return empVector->compareLN(i, j);
+    }
+};
 
 class BubbleSortSalary : public BubbleSort{
 protected:
-        virtual bool compare(empDataBase* empVector, int i, int j) const {
-            return !empVector->compareSalary(i, j);
-        }
-    };
+    virtual bool compare(empDataBase* empVector, int i, int j) const {
+        return !empVector->compareSalary(i, j);
+    }
+};
 class BubbleSortSalaryReverse : public BubbleSort{
 protected:
-        virtual bool compare(empDataBase* empVector, int i, int j) const {
-            return empVector->compareSalary(i, j);
-        }
-    };
+    virtual bool compare(empDataBase* empVector, int i, int j) const {
+        return empVector->compareSalary(i, j);
+    }
+};
 
 class BubbleSortYear : public BubbleSort{
 protected:
-        virtual bool compare(empDataBase* empVector, int i, int j) const {
-            return !empVector->compareYR(i, j);
-        }
-    };
+    virtual bool compare(empDataBase* empVector, int i, int j) const {
+        return !empVector->compareYR(i, j);
+    }
+};
 class BubbleSortYearReverse : public BubbleSort{
 protected:
-        virtual bool compare(empDataBase* empVector, int i, int j) const {
-            return empVector->compareYR(i, j);
-        }
+    virtual bool compare(empDataBase* empVector, int i, int j) const {
+        return empVector->compareYR(i, j);
+    }
 };

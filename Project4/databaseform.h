@@ -21,31 +21,29 @@ public:
     ~DatabaseForm();
     std::vector<Employee*> employees;
 
-    //stuuf
-
 public slots:
     void on_addRButton_clicked();
     void receiveEmployee(Employee*);
 
 private slots:
     void on_okButton_clicked();
-<<<<<<< HEAD
-    void sort();
+    //void sort();
     void sortingEmp(int);
 
-    void empCompare(Employee*, int , int );
+    //void empCompare(Employee*, int , int );
 
-//protected:
+protected:
   //  std::vector<Employee*> employees;
-=======
     void sortEmployees(int column, Qt::SortOrder order);
->>>>>>> origin/master
-
 private:
     void save();
     Ui::DatabaseForm *ui;
     std::vector<addRecordForm*> listen;
     //std::vector<Employee*> employees;
+    bool sortedFirst;
+    bool sortedLast;
+    bool sortedSalary;
+    bool sortedHireYear = false;
     unsigned int rowNumber;
 };
 
